@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title></title>
+    <style>
+        *{margin:0;padding:0;}
+        /*头部导航栏*/
+        #header{
+            min-width:1400px;
+            height:48px;
+            background-color:#fff;
+        }
+        /*头部尤文logo*/
+        #logo{
+            width:45px;
+            height:45px;
+            left:100px;
+        }
+        /*导航栏样式*/
+        a{
+            text-decoration:none;
+        }
+        #header ul li{
+            float: left;
+            list-style-type: none;
+            margin:0 20px;
+        }
+        /*头部文字交互效果*/
+        #header ul li a:hover{
+            color:#bda4b0;
+        }
+        #header ul li a{
+            text-decoration:none;
+            font-size:17px;
+            color:black;
+            text-align:center;
+            line-height:48px;
+        }
+        /*背景图*/
+        #content{
+            position: relative;
+            min-width:1400px;
+            height:800px;
+            background-image:url(../imgs/bg.jpg);
+            background-size:cover;
+            background-repeat:repeat;
+            background-attachment:scroll;
+            background-position:0 -221px;
+        }
+        /*登录框*/
+        #t1{
+            width:300px;
+            height:200px;
+            background-image:linear-gradient(to right,#4c4b4b33,#3a3432);
+            border-radius:5px;
+            box-sizing: border-box;
+            position: absolute;
+            left:50%;
+            top: 50%;
+            margin:-100px 0 0 -100px;
+            cursor: pointer;
+            transition: all 0.6s;
+
+        }
+        /*登录框交互效果*/
+        #t1:hover{
+            transform: scale(1.1);
+        }
+        /*填写格*/
+        input{
+            width:100%;
+            height:30px;
+            border:1px solid #fff;
+            box-sizing:border-box;
+            padding:0 5px;
+            border-radius:3px;
+            background-color:#ff000000;
+            color:#fff;
+            outline:0;
+        }
+        input::-webkit-input-placeholder{
+            color:white;
+        }
+        /*填写格交互效果*/
+        input:focus{
+            border: 1px solid #00aeef;
+        }
+        /*用户名格*/
+        #uname{
+            background-image:url(../imgs/logg.svg);
+            background-repeat: no-repeat;
+            background-position:98% 56%;
+        }
+        /*密码格*/
+        #upwd{
+            background-image:url(../imgs/lopd.svg);
+            background-repeat: no-repeat;
+            background-position:98% 56%;
+        }
+        /*登录按钮*/
+        button{
+            width:100%;
+            height:30px;
+            border:0;outline:0;
+            border-radius:3px;
+            color:#fff;
+            background-image:linear-gradient(to bottom,#616365,#000000);
+        }
+        /*登录框字体*/
+        #zi{
+            font-size:13px;
+            text-align:right;
+            color:#95989e;
+        }
+        #zz{
+            color:#95989e;
+        }
+        #first{
+            font-size:10px;
+            color:#fd1010;
+            position:relative;
+            top:300px;
+            left:960px;
+        }
+        /*登录框标题*/
+        caption{
+            margin-left:10px;
+            font-size:20px;
+            color:#fff;
+        }
+        /*尾部*/
+        #footer:before{
+            content:" ";
+            display:table;
+        }
+        #footer{
+            min-width:1400px;
+            height:866px;
+            background-color:#fff;
+            position: relative;
+        }
+        /*尾部一层小图片栏*/
+        #d1{
+            min-width:1400px;
+            margin:auto ;
+            border-top:2px solid #b9b4b4;
+        }
+        #d1 ul{
+            width:300px;
+            margin:30px auto;
+        }
+        #d1 ul li{
+            list-style-type: none;
+            float: left;
+            margin:0 30px ;
+            cursor: pointer;
+            transition: all 0.6s;
+        }
+        /*小图片交互效果*/
+        #d1 ul li:hover{
+            transform: scale(1.1);
+        }
+        /*尾部二层文字信息栏*/
+        #d2{
+            min-width:1400px;
+            margin:90px  auto ;
+            border-top:2px solid #b9b4b4;
+        }
+        #u1{
+            width:65px;
+            float: left;
+            margin-left:650px;
+
+        }
+        #u2{
+            width:35px;
+            float:left;
+            margin-left:193px ;
+        }
+        #u3{
+            width:87px;
+            float:left;
+            margin-left: 179px;
+        }
+        #d2 ul li{
+            list-style-type:none;
+            margin:10px 0;
+            cursor: pointer;
+            transition: all 0.6s;
+        }
+        /*文字交互效果*/
+        #d2 ul li:hover{
+            transform: scale(1.1);
+        }
+        #d2 ul li a{
+            color:#b9b4b4;
+        }
+        /*微信二维码*/
+        #weixin{
+            position:relative;
+        }
+        #weixin::after{
+            content: url(../imgs/ewm.jpg);
+            position: absolute;
+            right: -51px;
+            top: 10px;
+            z-index: 99;
+            width:50px;
+            height: 50px;
+            border: 3px solid #000;
+            border-radius: 4px;
+            transform-origin: top right;
+            transform: scale(0);
+            opacity: 0;
+            -webkit-transition: all .4s ease-in-out;
+            -o-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+        }
+        #weixin:hover::after{
+            transform:scale(1);
+            opacity: 1;
+        }
+        /*尾部三层广告图标栏*/
+        #d3{
+            min-width:1400px;
+            height:420px;
+            margin-top:200px;
+            background:#000;
+        }
+        #d3 ul{
+            width:800px;
+            margin:0 auto;
+        }
+        #d3 ul li{
+            list-style-type: none;
+            float: left;
+            margin-right:15px;
+            cursor: pointer;
+            transition: all 0.6s;
+        }
+        /*广告图片交互效果*/
+        #d3 ul li:hover{
+            transform: scale(1.3);
+        }
+        #d3 ul li img{
+            width:110px;
+            height:100px;
+        }
+        /*尾部尤文logo*/
+        #d3 #flogo{
+            margin-left:320px;
+        }
+        /*版权信息*/
+        #footer p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<!--头部导航栏-->
+<div id="header">
+        <ul>
+            <li><a href=""><img id="logo" src="../imgs/logo-j.svg" title="尤文图斯"></a></li>
+            <li><a href="index.html">主页</a></li>
+            <li><a href="">新闻</a></li>
+            <li><a href="">球员</a></li>
+            <li><a href="">视频</a></li>
+            <li><a href="">荣誉殿堂</a></li>
+            <li id="store"><a href="">官方商城</a></li>
+        </ul>
+</div>
+<!--中间背景栏-->
+<div id="content">
+    <!--登录框-->
+    <div id="login">
+        <table id="t1">
+            <caption>登录</caption>
+            <tr>
+                <span id="first"></span>
+                <td><input type="text" id="uname" placeholder="邮箱或手机号" onfocus="show()"></td>
+            </tr>
+            <tr>
+                <td><input type="password" id="upwd" placeholder="密码"></td>
+            </tr>
+            <tr>
+                <td>
+                    <button>登录</button>
+                </td>
+            </tr>
+            <tr>
+                <td id="zi">忘记密码 | <a href="user_post.html" id="zz">注册</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!--尾部信息栏-->
+<div id="footer">
+    <!--小图标栏-->
+    <div id="d1">
+            <ul>
+                <li><a href="https://weibo.com/juventusfccn"><img src="../imgs/weibo.svg" alt=""/></a></li>
+                <li><a href=""><img src="../imgs/QQ.svg" alt=""/></a></li>
+                <li><a id="weixin" href="javascript:"><img src="../imgs/wechat.svg" alt=""/></a></li>
+            </ul>
+    </div>
+    <!-- 文字信息栏-->
+    <div id="d2">
+        <ul id="u1">
+            <li><a href="index.html">主页</a></li>
+            <li><a href="">新闻</a></li>
+            <li><a href="">球员</a></li>
+            <li><a href="">视频</a></li>
+            <li><a href="">荣誉殿堂</a></li>
+            <li><a href="">官方商城</a></li>
+        </ul>
+        <ul id="u2">
+            <li><a href="">教练</a></li>
+            <li><a href="">主席</a></li>
+            <li><a href="">历史</a></li>
+            <li><a href="">传奇</a></li>
+            <li><a href="">球场</a></li>
+            <li><a href="">城市</a></li>
+        </ul>
+        <ul id="u3">
+            <li><a href="">条款和条件</a></li>
+            <li><a href="">隐私和政策</a></li>
+            <li><a href="">联系我们</a></li>
+            <li><a href="">Cooike政策</a></li>
+        </ul>
+    </div>
+    <!-- 广告图标栏-->
+    <div id="d3">
+        <ul>
+            <li><img src="../fimg/adidas_grey.svg"alt=""/></li>
+            <li><img src="../fimg/jeep_grey.svg"alt=""/></li>
+            <li><img src="../fimg/allianz_grey.svg"alt=""/></li>
+            <li><img src="../fimg/balocco_grey.svg"alt=""/></li>
+            <li><img src="../fimg/cygames_grey.svg"alt=""/></li>
+            <li><img src="../fimg/frecciarossa_grey.svg"alt=""/></li>
+            <li><img src="../fimg/dececco_grey.svg"alt=""/></li>
+            <li><img src="../fimg/linglong_grey.svg"alt=""/></li>
+            <li><img src="../fimg/mms_grey.svg"alt=""/></li>
+            <li><img src="../fimg/noberasco_grey.svg" alt=""/></li>
+            <li><img src="../fimg/osonyq_grey.svg" alt=""/></li>
+            <li><img src="../fimg/philips_grey.svg" alt=""/></li>
+            <li><img src="../fimg/randstad_grey.svg" alt=""/></li>
+            <li><img src="../fimg/samsung_grey.svg" alt=""/></li>
+            <li><img src="../fimg/sky_grey.svg" alt=""/></li>
+            <li><img src="../fimg/ubi_grey.svg" alt=""/></li>
+            <li><img src="../fimg/betfair_grey.svg" alt=""/></li>
+            <li><img src="../fimg/ganten_grey.svg" alt=""/></li>
+            <li id="flogo"><img src="../fimg/logo-j2.svg" alt=""/></li>
+        </ul>
+    </div>
+    <!-- 版权声明-->
+    <p>版权所有尤文图斯©2019年版权所有</p>
+</div>
+</body>
+<script>
+    function show(){
+        if(!uname.value){
+            first.innerHTML="邮箱或手机号格式错误";
+        }
+    }
+</script>
+</html>
