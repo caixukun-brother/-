@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /*清除外边距内边距*/
+        *{margin:0;padding:0;}
+        /*头部导航栏开始*/
+        #header{
+            min-width:2000px;
+        }
+        /*头部一级导航栏*/
+        #top_1{
+            height:22px;
+            background: #000;
+            
+        }
+        ul li{
+            list-style-type: none;
+            float:left;
+        }
+        a{
+            text-decoration: none;
+        }
+        #top_1 a,#top_3 a{
+            color:gray;
+        }
+        #top_1 a:hover{
+            color:#fff;
+        }
+        #L_ul{
+            margin-left:350px;
+        }
+        #L_ul li{
+            margin:0 10px;
+        }
+        #R_ul{
+            float:right;
+            margin-right:400px;
+        }
+        #R_ul li{
+            margin:0 10px;
+        }
+        #R_ul li a:hover{
+            color:yellow;
+        }
+        /*头部一级导航栏消下边距*/
+        #top_2:after{
+            content:" ";
+            display:table;
+        }
+        /*头部二级logo栏*/
+        #top_2{
+            height:120px;
+        }
+        /*尤文标题*/
+        #title{
+            color: #000;
+            font-size:30px;
+            margin:38px 0 0 21px;
+        }
+        /*尤文logo*/
+        #logo{
+            width:54px;
+            height:85px;
+            margin-top: 15px;
+            margin-left:359px;
+        }
+        /*阿迪达斯logo*/
+        #adidas{
+            width:126px;
+            height:120px;
+            margin-left:645px;
+        }
+        /*jeeplogo*/
+        #jeep{
+            width: 133px;
+            height: 82px;
+            margin:16px 0 0 4px;
+        }
+        /*头部三级导航栏*/
+        #top_3{
+            height:60px;
+            background:#000;
+            font-size:25px;
+
+        }
+        #top_3 a{
+            transition-property:all;
+            transition-duration:0.6s;
+        }
+        #top_3 a:hover{
+            color:#fff;
+        }
+        #top_3 ul{
+            width:800px;
+            margin:0 auto;
+        }
+        #top_3 ul li{
+            margin:0 40px;
+            line-height:30px;
+            border-bottom:2px solid #000;
+        }
+        #top_3 ul li:hover{
+            border-bottom:2px solid #fff;
+        }
+        /* 头部导航栏结束 */
+        /* 主体开始 */
+        /* 主体冠军大背景图 */
+        #content{
+            min-width:2000px;
+            height:2460px;
+        }
+        #cont{
+            position: relative;
+            background:#000;
+        }
+        #cont img{
+            margin-left:250px;
+        }
+        /* 冠军人员文字 */
+        #wen{
+            width:379px;
+            height:253px;
+            display: inline-block;
+            position:absolute;
+            top:60px;
+            right:150px;
+            text-align:center;
+            color:#fff;
+            line-height:37px;
+        }
+        #wen_title{
+            font-size:30px;
+            margin-top:-40px;
+            color:yellow;
+        }
+        #wen span{
+            color:yellow;
+        }
+        /* 楼层样式布局 */
+        .floor{
+            height:500px;
+            margin-top:40px;
+            margin-left:450px;
+            margin-right:400px;
+        }
+        .floor_msg{
+            margin-top:10px;
+        }
+        .floor_msg ul li{
+            margin:10px 20px;
+            cursor: pointer;
+            transition: all 0.6s;
+        }
+        .floor_msg ul li:hover{
+            transform: scale(1.1);
+            background:#e0e0e0;
+        }
+        #f1_line,#f2_line,#f3_line,#f4_line{
+            border-bottom:0.9px solid gray;
+        }
+        .floor_title{
+            width:130px;
+            border-bottom:3px solid #000;   
+        }
+        #f1_line h2,#f2_line h2,#f3_line h2,#f4_line h2{
+            margin-left:30px;
+        }
+        .time{
+            color:#b9b4b4;
+            font-size:10px;
+        }
+        .things{
+            font-size:25px;
+        }
+        .things:hover{
+            color:#15121491;
+        }
+        /* 一楼布局 */
+        #f1_line{
+            background: url(../imgs/news_icon.svg);
+            background-repeat: no-repeat;
+        }
+        /* 二楼布局 */
+        #f2_line{
+            background: url(../imgs/videos_icon.svg);
+            background-repeat: no-repeat;
+        }
+        /* 三楼布局 */
+        #f3_line{
+            background: url(../imgs/pics_icon.svg);
+            background-repeat: no-repeat;
+        }
+        /* 四楼布局 */
+        #f4_line{
+            background: url(../imgs/cham_icon.svg);
+            background-repeat: no-repeat;
+        }
+        #f4_msg ul li{
+            margin:20px 3px;
+        }
+        #f4_msg img{
+            overflow: hidden;
+            transition-duration:0.5s;
+            transition-timing-function:linear;
+        }
+        #f4_msg img:hover{
+            transform:translateY(-20px);
+        }
+        #f4_msg p{
+            font-size:10px;
+            text-align:center;
+            color:#b9b4b4;
+        }
+        #f4_msg ul li p:hover{
+            color:#000;
+        }
+        #f4_msg h1{
+            font-family:"Tahoma";
+            text-align: center;
+        }
+        #ent{
+            width:1900px;
+        }
+        /*尾部*/
+        #footer:before{
+            content:" ";
+            display:table;
+        }
+        #footer{
+            min-width:2000px;
+            height:500px;
+            background-color:#fff;
+            position: relative;
+        }
+        /*尾部一层小图片栏*/
+        #d1{
+            min-width:1400px;
+            margin:auto ;
+            border-top:2px solid #b9b4b4;
+        }
+        #d1 ul{
+            width:300px;
+            margin:30px auto;
+        }
+        #d1 ul li{
+            list-style-type: none;
+            float: left;
+            margin:0 30px ;
+            cursor: pointer;
+            transition: all 0.6s;
+        }
+        /*小图片交互效果*/
+        #d1 ul li:hover{
+            transform: scale(1.1);
+        }
+        /*尾部二层文字信息栏*/
+        #d2{
+            min-width:1400px;
+            margin:90px  auto ;
+            border-top:2px solid #b9b4b4;
+        }
+        #u1{
+            width:63px;
+            float: left;
+            margin-left:650px;
+
+        }
+        #u2{
+            width:35px;
+            float:left;
+            margin-left:193px ;
+        }
+        #u3{
+            width:87px;
+            float:left;
+            margin-left: 179px;
+        }
+        #d2 ul li{
+            list-style-type:none;
+            margin:10px 0;
+        }
+        /*文字交互效果*/
+        #d2 ul li a:hover{
+            color:#000;
+        }
+        #d2 ul li a{
+            color:#b9b4b4;
+        }
+        /*微信二维码*/
+        #weixin{
+            position:relative;
+        }
+        #weixin::after{
+            content: url(../imgs/ewm.jpg);
+            position: absolute;
+            right: -51px;
+            top: 10px;
+            z-index: 99;
+            width:50px;
+            height: 50px;
+            border: 3px solid #000;
+            border-radius: 4px;
+            transform-origin: top right;
+            transform: scale(0);
+            opacity: 0;
+            -webkit-transition: all .4s ease-in-out;
+            -o-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+        }
+        #weixin:hover::after{
+            transform:scale(1);
+            opacity: 1;
+        }
+        /*尾部三层广告图标栏*/
+        #d3{
+            min-width:1400px;
+            height:420px;
+            margin-top:290px;
+            background:#000;
+        }
+        #d3 ul{
+            width:800px;
+            margin:0 auto;
+        }
+        #d3 ul li{
+            list-style-type: none;
+            float: left;
+            margin-right:15px;
+            cursor: pointer;
+            transition: all 0.6s;
+        }
+        /*广告图片交互效果*/
+        #d3 ul li:hover{
+            transform: scale(1.3);
+        }
+        #d3 ul li img{
+            width:110px;
+            height:100px;
+        }
+        /*尾部尤文logo*/
+        #d3 #flogo{
+            margin-left:320px;
+        }
+        /*版权信息*/
+        #footer p{
+            text-align: center;
+        }
+        /*侧边导航栏*/
+        #s1{
+            width:50px;
+            height:205px;
+            position:fixed;
+            border-radius:5px;
+            top:200px;
+            background:linear-gradient(to bottom,#d6d6d6,#e2e2e2);
+            right:5px;
+            z-index:1;
+        }
+        #s1 ul li{
+            list-style-type: none;
+        }
+        #s1 ul li:hover{
+            background:#000;
+        }
+        .floor_msg a{
+            color:#000;
+        }
+    </style>
+</head>
+<body>
+<!-- 侧边导航栏 -->
+<span id="s1">
+        <ul>
+            <li><a href="index.html"><img src="../imgs/home_icon.svg" title="主页"/></a></li>
+            <li><a href="book.html"><img src="../imgs/phone_icon.svg" title="订票"/></a></li>
+            <li><a href=""><img src="../imgs/date_icon.svg" title="赛程"/></a></li>
+            <li><a href=""><img src="../imgs/map_icon.svg" title="地点"/></a></li>
+        </ul>
+    </span>
+<!--头部导航栏-->
+    <div id="header">
+        <!-- 头部一级导航栏 -->
+        <div id="top_1">
+            <ul id="L_ul">
+                <li><a href="index.html">尤文图斯</a></li>
+                <li><a href="">官方商城</a></li>
+                <li><a href="">JUVENTUS TV</a></li>
+                <li><a href="">媒体报道</a></li>
+                <li><a href="friends.html">合作伙伴</a></li>
+            </ul>
+            <ul id="R_ul">
+                <li><a href="login.html">登录</a></li>
+                <li><a href="user_post.html">注册</a></li>
+            </ul>  
+        </div>
+        <!-- 头部二级logo栏 -->
+        <div id="top_2">
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <img id="logo" src="../imgs/logo-j.svg" title="尤文图斯"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html"><h3 id="title" class="font-weight-bold">尤文图斯 官网</h3></a>
+                </li>
+                <li>
+                    <a href="https://www.adidas.com.cn"><img id="adidas" src="../imgs/adidas.jpg" title="阿迪达斯"/></a>
+                </li>
+                <li>
+                    <a href="https://www.jeep.com.cn/"><img id="jeep" src="../imgs/jeep.jpg" title="jeep"/></a>
+                </li>
+            </ul>
+        </div>
+        <div id="top_3">
+            <ul>
+                <li><a href="index.html">主页</a></li>
+                <li><a href="news.html">新闻</a></li>
+                <li><a href="players.html">球员</a></li>
+                <li><a href="videos.html">视频</a></li>
+                <li><a href="honner.html">荣誉殿堂</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 主体 -->
+    <div id="content">
+        <!-- 主体冠军大背景图 -->
+        <div id="cont">
+            <img src="../imgs/cham.png" alt="">
+            <div id="wen">
+                <p id="wen_title">2018-19赛季意甲冠军</p>
+                <p><span>导演:</span>马西米利亚诺·阿莱格里</p>
+                <p><span>特别出演:</span>乔吉奥·基耶利尼 安德烈·巴尔扎利</p>
+                <p><span>出演:</span>沃依切赫·什琴斯尼 马蒂亚·德西利奥<br>马丁·卡塞雷斯 米拉勒姆·皮亚尼奇 萨米·赫迪拉<br>克里斯蒂亚诺·罗纳尔多 保罗·迪巴拉 道格拉斯·科斯塔<br>阿莱士·桑德罗 布莱瑟·马图伊迪 胡安·夸德拉多<br>马里奥·曼朱基奇 莫伊塞·基恩 莱安纳多·博努奇<br>若奥·坎塞洛 卡洛·平索里奥 马蒂亚·佩林 埃姆雷·詹<br>丹妮埃尔·鲁加尼 罗德里格·本坦库尔<br>费德里科·贝尔纳代斯基 莱昂纳多·斯皮纳佐拉<br><span>剧场:</span>安联竞技场</p>
+            </div>
+        </div>
+        <!-- 一楼布局——最新消息 -->
+        <div id="ent">
+        <div class="floor">
+            <div id="f1_line">
+                <div class="floor_title"><h2>最新消息</h2></div>
+            </div>
+            <div class="floor_msg">
+                <ul>
+                    <a href="news.html">
+                        <li>
+                            <img src="../imgs/1F1.png" alt="">
+                            <p class="time">2019.06.16 官方声明</p>
+                            <p class="things">新任教练萨里马上见面</p>
+                        </li>
+                    </a>
+                    <a href="news.html">
+                        <li>
+                            <img src="../imgs/1F2.jpg" alt="">
+                            <p class="time">2019.05.20 官方声明</p>
+                            <p class="things">致亲爱的巴扎</p>
+                        </li>
+                    </a>
+                    <a href="news.html">
+                        <li>
+                            <img src="../imgs/1F3.jpg" alt="">
+                            <p class="time">2019.07.01 官方声明</p>
+                            <p class="things">法国中场拉比奥加盟</p>
+                        </li>
+                    </a>
+                    <a href="news.html">
+                        <li>
+                            <img src="../imgs/1F4.jpg" alt="">
+                            <p class="time">2019.07.02 官方声明</p>
+                            <p class="things">贝贝正式续约至2022年</p>
+                        </li>
+                    </a>
+                    <a href="news.html">
+                        <li>
+                            <img src="../imgs/1F5.jpg" alt="">
+                            <p class="time">2019.05.06 官方声明</p>
+                            <p class="things">18-19欧冠回顾</p>
+                        </li>
+                    </a>
+                    <a href="news.html">
+                        <li>
+                            <img src="../imgs/1F6.jpg" alt="">
+                            <p class="time">2019.05.30 官方声明</p>
+                            <p class="things">BBBC重聚博物馆</p>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div> 
+        <!-- 二楼布局——最新视频 -->
+        <div class="floor">
+            <div id="f2_line">
+                <div class="floor_title"><h2>最新视频</h2></div>
+            </div>
+        <div class="floor_msg">
+            <ul>
+                <a href="videos.html">
+                    <li>
+                        <img src="../imgs/2F1.jpg" alt="">
+                        <p class="time">2019.05.20 意甲联赛</p>
+                        <p class="things">尤文图斯-亚特兰大 集锦</p>
+                    </li>
+                </a>
+                <a href="videos.html">
+                    <li>
+                        <img src="../imgs/2F2.jpg" alt="">
+                        <p class="time">2019.04.13 意甲联赛</p>
+                        <p class="things">尤文图斯-罗马 集锦</p>
+                    </li>
+                </a>
+                <a href="videos.html">
+                    <li>
+                        <img src="../imgs/2F3.jpg" alt="">
+                        <p class="time">2019.03.13 欧冠联赛</p>
+                        <p class="things">尤文图斯-马德里竞技 集锦</p>
+                    </li>
+                </a>
+                <a href="videos.html">
+                    <li>
+                        <img src="../imgs/2F4.jpg" alt="">
+                        <p class="time">2019.03.30 意甲联赛</p>
+                        <p class="things">尤文图斯-恩波利 集锦</p>
+                    </li>
+                </a>
+                <a href="videos.html">
+                    <li>
+                        <img src="../imgs/2F5.jpg" alt="">
+                        <p class="time">2019.05.26 意甲联赛</p>
+                        <p class="things">桑普-尤文图斯 集锦</p>
+                    </li>
+                </a>
+                <a href="videos.html">
+                    <li>
+                        <img src="../imgs/2F6.jpg" alt="">
+                        <p class="time">2019.03.27 意甲联赛</p>
+                        <p class="things">AC米兰-尤文图斯 集锦</p>
+                    </li>
+                </a>
+            </ul>
+        </div>
+    </div>
+        <!-- 三楼布局——最新相册 -->
+        <div class="floor">
+            <div id="f3_line">
+                <div class="floor_title"><h2>最新相册</h2></div>
+            </div>
+            <div class="floor_msg">
+                <ul>
+                    <a href="videos.html">
+                        <li>
+                            <img src="../imgs/3F1.jpg" alt="">
+                            <p class="time">2019.02.24  意甲联赛</p>
+                            <p class="things">博洛尼亚-尤文图斯 图集</p>
+                        </li>
+                    </a>
+                    <a href="videos.html">
+                        <li>
+                            <img src="../imgs/3F2.jpg" alt="">
+                            <p class="time">2019.06.04 团队训练</p>
+                            <p class="things">最佳训练瞬间</p>
+                        </li>
+                    </a>
+                    <a href="videos.html">
+                        <li>
+                            <img src="../imgs/3F3.jpg" alt="">
+                            <p class="time">2019.05.30 团队训练</p>
+                            <p class="things">五月最佳训练瞬间</p>
+                        </li>
+                    </a>
+                    <a href="videos.html">
+                        <li>
+                            <img src="../imgs/3F4.jpg" alt="">
+                            <p class="time">2019.06.09 意甲联赛</p>
+                            <p class="things">如此 #W8NDERFUL</p>
+                        </li>
+                    </a>
+                    <a href="videos.html">
+                        <li>
+                            <img src="../imgs/1F6.jpg" alt="">
+                            <p class="time">2019.05.30 焦点事件</p>
+                            <p class="things">BBBC重聚博物馆</p>
+                        </li>
+                    </a>
+                    <a href="videos.html">
+                        <li>
+                            <img src="../imgs/3F6.jpg" alt="">
+                            <p class="time">2019.06.28 球队活动</p>
+                            <p class="things">粉丝福利活动</p>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+            <!-- 四楼布局——俱乐部 -->
+            <div class="floor">
+                    <div id="f4_line">
+                        <div class="floor_title"><h2>俱乐部</h2></div>
+                    </div>
+                <div id="f4_msg">
+                    <ul>
+                        <li>
+                            <a href="honner.html">
+                                <img src="../imgs/trophy_scudetto.png" alt="">
+                                <p>SCUDETTO</p>
+                            </a>
+                            <h1>37</h1>
+                        </li>
+                        <li>
+                            <a href="honner.html">
+                                <img src="../imgs/trophy_champions_league.png" alt="">
+                                <p>CHAMPIONS LEAGUE</p>
+                            </a>
+                            <h1>2</h1>
+                        </li>
+                        <li>
+                            <a href="honner.html">
+                                <img src="../imgs/trophy_coppa_italia.png" alt="">
+                                <p>COPPA ITALIA</p>
+                            </a>
+                                <h1>13</h1>
+                            </li>
+                        <li>
+                            <a href="honner.html">
+                                <img src="../imgs/trophy_coppa_intercontinentale.png" alt="">
+                                <p>INTERCONTINENTAL CUP</p>
+                            </a>
+                            <h1>2</h1>
+                        </li>
+                        <li>
+                            <a href="honner.html">
+                                <img src="../imgs/trophy_coppa_uefa.png" alt="">
+                                <p>UEFA CUP</p>
+                            </a>
+                            <h1>3</h1>
+                        </li>
+                        <li>
+                            <a href="honner.html">
+                                <img src="../imgs/trophy_supercoppa_europea.png" alt="">
+                                <p>UEFA SUPPER CUP</p>
+                            </a>
+                            <h1>2</h1>
+                        </li>
+                        <li>
+                            <a href="honner.html">
+                            <img src="../imgs/trophy_coppa_delle_coppe.png" alt="">
+                            <p>UEFA CUP WINNERS' CUP</p>
+                        </a>
+                        <h1>1</h1>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+ <!--尾部信息栏-->
+<div id="footer">
+        <!--小图标栏-->
+        <div id="d1">
+                <ul>
+                    <li><a href="https://weibo.com/juventusfccn"><img src="../imgs/weibo.svg" alt=""/></a></li>
+                    <li><a href=""><img src="../imgs/QQ.svg" alt=""/></a></li>
+                    <li><a id="weixin" href="javascript:"><img src="../imgs/wechat.svg" alt=""/></a></li>
+                </ul>
+        </div>
+        <!-- 文字信息栏-->
+        <div id="d2">
+            <ul id="u1">
+                <li><a href="index.html">主页</a></li>
+                <li><a href="news.html">新闻</a></li>
+                <li><a href="players.html">球员</a></li>
+                <li><a href="videos.html">视频</a></li>
+                <li><a href="honner.html">荣誉</a></li>
+                <li><a href="">商城</a></li>
+            </ul>
+            <ul id="u2">
+                <li><a href="players.html">教练</a></li>
+                <li><a href="players.html">主席</a></li>
+                <li><a href="honner.html">历史</a></li>
+                <li><a href="honner.html">传奇</a></li>
+                <li><a href="football.html">球场</a></li>
+                <li><a href="football.html">城市</a></li>
+            </ul>
+            <ul id="u3">
+                <li><a href="papers.html">条款和条件</a></li>
+                <li><a href="papers.html">隐私和政策</a></li>
+                <li><a href="papers.html">联系我们</a></li>
+                <li><a href="cookies.html">Cooike政策</a></li>
+            </ul>
+        </div>
+        <!-- 广告图标栏-->
+        <div id="d3">
+            <ul>
+                <li><img src="../fimg/adidas_grey.svg"alt=""/></li>
+                <li><img src="../fimg/jeep_grey.svg"alt=""/></li>
+                <li><img src="../fimg/allianz_grey.svg"alt=""/></li>
+                <li><img src="../fimg/balocco_grey.svg"alt=""/></li>
+                <li><img src="../fimg/cygames_grey.svg"alt=""/></li>
+                <li><img src="../fimg/frecciarossa_grey.svg"alt=""/></li>
+                <li><img src="../fimg/dececco_grey.svg"alt=""/></li>
+                <li><img src="../fimg/linglong_grey.svg"alt=""/>
+                <li><img src="../fimg/mms_grey.svg"alt=""/></li>
+                <li><img src="../fimg/noberasco_grey.svg" alt=""/></li>
+                <li><img src="../fimg/osonyq_grey.svg" alt=""/></li>
+                <li><img src="../fimg/philips_grey.svg" alt=""/></li>
+                <li><img src="../fimg/randstad_grey.svg" alt=""/></li>
+                <li><img src="../fimg/samsung_grey.svg" alt=""/></li>
+                <li><img src="../fimg/sky_grey.svg" alt=""/></li>
+                <li><img src="../fimg/ubi_grey.svg" alt=""/></li>
+                <li><img src="../fimg/betfair_grey.svg" alt=""/></li>
+                <li><img src="../fimg/ganten_grey.svg" alt=""/></li>
+                <li id="flogo"><img src="../fimg/logo-j2.svg" alt=""/></li>
+            </ul>
+        </div>
+        <!-- 版权声明-->
+        <p>版权所有尤文图斯©2019年版权所有</p>
+    </div>   
+</body>
+</html>

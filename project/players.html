@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*清除外边距内边距*/
+        *{margin:0;padding:0;}
+        /*头部导航栏开始*/
+        #header{
+            min-width:2000px;
+        }
+        /*头部一级导航栏*/
+        #top_1{
+            height:22px;
+            background: #000;
+            
+        }
+        ul li{
+            list-style-type: none;
+            float:left;
+        }
+        a{
+            text-decoration: none;
+        }
+        #top_1 a,#top_3 a{
+            color:gray;
+        }
+        #top_1 a:hover{
+            color:#fff;
+        }
+        #L_ul{
+            margin-left:350px;
+        }
+        #L_ul li{
+            margin:0 10px;
+        }
+        #R_ul{
+            float:right;
+            margin-right:400px;
+        }
+        #R_ul li{
+            margin:0 10px;
+        }
+        #R_ul li a:hover{
+            color:yellow;
+        }
+        /*头部一级导航栏消下边距*/
+        #top_2:after{
+            content:" ";
+            display:table;
+        }
+        /*头部二级logo栏*/
+        #top_2{
+            height:120px;
+        }
+        /*尤文标题*/
+        #title{
+            color: #000;
+            font-size:30px;
+            margin:38px 0 0 21px;
+        }
+        /*尤文logo*/
+        #logo{
+            width:54px;
+            height:85px;
+            margin-top: 15px;
+            margin-left:359px;
+        }
+        /*阿迪达斯logo*/
+        #adidas{
+            width:126px;
+            height:120px;
+            margin-left:645px;
+        }
+        /*jeeplogo*/
+        #jeep{
+            width: 133px;
+            height: 82px;
+            margin:16px 0 0 4px;
+        }
+        /*头部三级导航栏*/
+        #top_3{
+            height:60px;
+            background:#000;
+            font-size:25px;
+        }
+        #top_3 a:hover{
+            color:#fff;
+        }
+        #top_3 ul{
+            width:800px;
+            margin:0 auto;
+        }
+        #top_3 ul li{
+            margin:0 40px;
+            line-height:30px;
+            border-bottom:2px solid #000;
+        }
+        #top_3 ul li:hover{
+            border-bottom:2px solid #fff;
+        }
+        /* 头部导航栏结束 */
+        /* 主体 */
+        #content{
+            min-width:2000px;
+            height:1560px;
+            background:#000;
+        }
+        #in{
+            width:1000px;
+            height:1480px;
+            margin:0 auto;
+            background:#fff;
+        }
+       
+        /* 标题 */
+        #line{
+            width:50%;
+            margin:0 auto;
+            background:#fff;
+            border-bottom:2px solid #000;
+        }
+        #line p{
+            font-size:30px;
+            font-weight:bold;
+            margin-left:10px;
+            text-align:center;
+        }
+        /* 球员 */ 
+        #in img{
+            border-radius:50%;
+            cursor: pointer;
+            transition: all 0.6s;
+        }
+        #in img:hover{
+            transform: scale(1.1);
+        }
+        h3{
+            text-align: center;
+            color:cadetblue;
+            font-family: "微软雅黑";
+        }
+        #in table p{
+            font-family:"微软雅黑";
+            font-size:15px;
+        }
+        #in table{
+            padding:0 100px;
+            border-bottom:2px solid #000;
+        }
+        #in table tr td{
+            text-align: center;
+        }
+        #fp{
+            width:400px;
+            margin-left:330px;
+            margin-top:30px;
+        }
+        #fp_font{
+            font-size:30px;
+        }
+        select{
+            width:160px;
+            height:35px;
+            margin-left:60px;
+        }
+        /*尾部*/
+        #footer:before{
+            content:" ";
+            display:table;
+        }
+        #footer{
+            min-width:2000px;
+            height:500px;
+            background-color:#fff;
+            position: relative;
+        }
+        /*尾部一层小图片栏*/
+        #d1{
+            min-width:1400px;
+            margin:auto ;
+            border-top:2px solid #b9b4b4;
+        }
+        #d1 ul{
+            width:300px;
+            margin:30px auto;
+        }
+        #d1 ul li{
+            list-style-type: none;
+            float: left;
+            margin:0 30px ;
+            cursor: pointer;
+            transition: all 0.6s;
+        }
+        /*小图片交互效果*/
+        #d1 ul li:hover{
+            transform: scale(1.1);
+        }
+        /*尾部二层文字信息栏*/
+        #d2{
+            min-width:1400px;
+            margin:90px  auto ;
+            border-top:2px solid #b9b4b4;
+        }
+        #u1{
+            width:63px;
+            float: left;
+            margin-left:650px;
+
+        }
+        #u2{
+            width:35px;
+            float:left;
+            margin-left:193px ;
+        }
+        #u3{
+            width:87px;
+            float:left;
+            margin-left: 179px;
+        }
+        #d2 ul li{
+            list-style-type:none;
+            margin:10px 0;
+        }
+        /*文字交互效果*/
+        #d2 ul li a:hover{
+            color:#000;
+        }
+        #d2 ul li a{
+            color:#b9b4b4;
+        }
+        /*微信二维码*/
+        #weixin{
+            position:relative;
+        }
+        #weixin::after{
+            content: url(../imgs/ewm.jpg);
+            position: absolute;
+            right: -51px;
+            top: 10px;
+            z-index: 99;
+            width:50px;
+            height: 50px;
+            border: 3px solid #000;
+            border-radius: 4px;
+            transform-origin: top right;
+            transform: scale(0);
+            opacity: 0;
+            -webkit-transition: all .4s ease-in-out;
+            -o-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+        }
+        #weixin:hover::after{
+            transform:scale(1);
+            opacity: 1;
+        }
+        /*尾部三层广告图标栏*/
+        #d3{
+            min-width:1400px;
+            height:420px;
+            margin-top:290px;
+            background:#000;
+        }
+        #d3 ul{
+            width:800px;
+            margin:0 auto;
+        }
+        #d3 ul li{
+            list-style-type: none;
+            float: left;
+            margin-right:15px;
+            cursor: pointer;
+            transition: all 0.6s;
+        }
+        /*广告图片交互效果*/
+        #d3 ul li:hover{
+            transform: scale(1.3);
+        }
+        #d3 ul li img{
+            width:110px;
+            height:100px;
+        }
+        /*尾部尤文logo*/
+        #d3 #flogo{
+            margin-left:320px;
+        }
+        /*版权信息*/
+        #footer p{
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <!--头部导航栏-->
+    <div id="header">
+            <!-- 头部一级导航栏 -->
+            <div id="top_1">
+                <ul id="L_ul">
+                    <li><a href="index.html">尤文图斯</a></li>
+                    <li><a href="">官方商城</a></li>
+                    <li><a href="">JUVENTUS TV</a></li>
+                    <li><a href="">媒体报道</a></li>
+                    <li><a href="friends.html">合作伙伴</a></li>
+                </ul>
+                <ul id="R_ul">
+                    <li><a href="login.html">登录</a></li>
+                    <li><a href="user_post.html">注册</a></li>
+                </ul>  
+            </div>
+            <!-- 头部二级logo栏 -->
+            <div id="top_2">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <img id="logo" src="../imgs/logo-j.svg" title="尤文图斯"/>
+                        </a>
+                    </li>
+                    <li>
+                        <h3 id="title" class="font-weight-bold">尤文图斯 官网</h3>
+                    </li>
+                    <li>
+                        <a href="https://www.adidas.com.cn">
+                            <img id="adidas" src="../imgs/adidas.jpg" title="阿迪达斯"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.jeep.com.cn/">
+                            <img id="jeep" src="../imgs/jeep.jpg" title="jeep"/>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div id="top_3">
+                <ul>
+                    <li><a href="index.html">主页</a></li>
+                    <li><a href="news.html">新闻</a></li>
+                    <li><a href="players.html">球员</a></li>
+                    <li><a href="videos.html">视频</a></li>
+                    <li><a href="honner.html">荣誉殿堂</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 主体 -->
+        <div id="content">
+            <!-- 主体标题 -->
+            <div id="line"><p>球员</p></div>
+            <!-- 主体详情页面 -->
+            <div id="in">
+                <h3>前锋</h3>
+                <table>
+                    <tr>
+                        <td>
+                            <a href=""><img src="../imgs/7p.jpg" alt=""></a>
+                            <p>C·罗纳尔多</p><strong>7</strong>
+                        </td>
+                        <td>
+                            <a href=""><img src="../imgs/10p.jpg" alt=""></a>
+                            <p>保罗·迪巴拉</p><strong>10</strong>
+                        </td>
+                        <td>
+                            <a href=""><img src="../imgs/11p.jpg" alt=""></a>
+                            <p>道格拉斯·科斯塔</p><strong>11</strong>
+                        </td>
+                        <td>
+                            <a href=""><img src="../imgs/17p.jpg" alt=""></a>
+                            <p>马里奥·曼朱基奇</p><strong>17</strong>
+                        </td>
+                        <td>
+                            <a href=""><img src="../imgs/18p.jpg" alt=""></a>
+                            <p>莫伊斯·基恩</p><strong>18</strong>
+                        </td>
+                    </tr>
+                </table>
+                <h3>中场</h3>
+                <table>
+                    <tr>
+                        <td>
+                            <a href=""><img src="../imgs/5p.jpg" alt=""></a>
+                            <p>米拉莱姆·皮亚尼奇</p><strong>5</strong>
+                        </td>
+                        <td>
+                            <a href=""><img src="../imgs/33p.jpg" alt=""></a>
+                            <p>费德里科·贝尔纳代斯基</p><strong>33</strong>
+                        </td>
+                        <td>
+                            <a href=""><img src="../imgs/30p.jpg" alt=""></a>
+                            <p>罗德里格·本坦库尔</p><strong>30</strong>
+                        </td>
+                        <td>
+                            <a href=""><img src="../imgs/23p.jpg" alt=""></a>
+                            <p>埃姆雷·詹</p><strong>23</strong>
+                        </td>
+                        <td>
+                            <a href=""><img src="../imgs/14p.jpg" alt=""></a>
+                            <p>布莱瑟·马图伊迪</p><strong>14</strong>
+                        </td>
+                    </tr>   
+                    <tr> 
+                        <td>
+                            <a href=""><img src="../imgs/16p.jpg" alt=""></a>
+                            <p>胡安·夸德拉多</p><strong>16</strong>
+                        </td>                       
+                        <td>
+                            <a href=""><img src="../imgs/6p.jpg" alt=""></a>
+                            <p>萨米·赫迪拉</p><strong>6</strong>
+                        </td>
+                        <td>
+                            <a href=""><img src="../imgs/25p.jpg" alt=""></a>
+                            <p>阿德里安·拉比奥</p><strong>25</strong>
+                        </td>
+                        <td>
+                            <a href=""><img src="../imgs/99p.jpg" alt=""></a>
+                            <p>阿隆·拉姆塞</p><strong>99</strong>
+                        </td>
+                    </tr>
+                </table>
+                <h3>后卫</h3>
+                <table>
+                    <tr>
+                        <td>
+                            <a href=""><img src="../imgs/20p.jpg" alt=""></a>
+                            <p>若奥·坎塞洛</p><strong>20</strong>
+                        </td>
+                        <td>
+                            <a href=""><img src="../imgs/12p.jpg" alt=""></a>
+                            <p>阿莱克斯·桑德罗</p><strong>12</strong>
+                        </td>
+                        <td>
+                            <a href=""><img src="../imgs/19p.jpg" alt=""></a>
+                            <p>莱昂纳多·博努奇</p><strong>19</strong>
+                        </td>
+                        <td>
+                            <a href=""><img src="../imgs/24p.jpg" alt=""></a>
+                            <p>丹尼尔·鲁加尼</p><strong>24</strong>
+                        </td>
+                        <td>
+                            <a href=""><img src="../imgs/2p.jpg" alt=""></a>
+                            <p>马蒂亚·德西利奥</p><strong>2</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href=""><img src="../imgs/3p.jpg" alt=""></a>
+                            <p>乔吉奥·基耶利尼</p><strong>3</strong>
+                        </td>
+                        <td>
+                            <a href=""><img src="../imgs/4p.jpg" alt=""></a>
+                            <p>马丁·卡塞雷斯</p><strong>4</strong>
+                        </td>
+                        <td>
+                            <a href=""><img src="../imgs/15p.jpg" alt=""></a>
+                            <p>安德雷亚·巴尔扎利</p><strong>15</strong>
+                        </td>
+                        <td>
+                            <a href=""><img src="../imgs/29p.jpg" alt=""></a>
+                            <p>卢卡·佩莱格里尼</p><strong>29</strong>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <h3>门将</h3>
+                    <tr>
+                        <td>
+                            <a href=""><img src="../imgs/1p.jpg" alt=""></a>
+                            <p>沃伊切赫·什琴斯尼</p><strong>1</strong>
+                        </td>
+                        <td>
+                            <a href=""><img src="../imgs/77p.jpg" alt=""></a>
+                            <p>布冯</p><strong>77</strong>
+                        </td>
+                        <td>
+                            <a href=""><img src="../imgs/21p.jpg" alt=""></a>
+                            <p>卡洛·平索里奥</p><strong>21</strong>
+                        </td>
+                        <td>
+                            <a href=""><img src="../imgs/22p.jpg" alt=""></a>
+                            <p>马蒂亚·佩林</p><strong>22</strong>
+                        </td>
+                        <td>
+                            <a href=""><img src="../imgs/31p.jpg" alt=""></a>
+                            <p>劳伦迪普·雷内斯丘</p><strong>31</strong>
+                        </td>
+                    </tr>
+                </table>
+                <div id="fp">                
+                <span id="fp_font">你最喜爱的一名球员</span><select>
+                    <option value="">C·罗纳尔多</option>
+                    <option value="">保罗·迪巴拉</option>
+                    <option value="">道格拉斯·科斯塔</option>
+                    <option value="">马里奥·曼朱基奇</option>
+                    <option value="">莫伊斯·基恩</option>
+                    <option value="">米拉莱姆·皮亚尼奇</option>
+                    <option value="">费德里科·贝尔纳代斯基</option>
+                    <option value="">罗德里格·本坦库尔</option>
+                    <option value="">埃姆雷·詹</option>
+                    <option value="">布莱瑟·马图伊迪</option>
+                    <option value="">胡安·夸德拉多</option>
+                    <option value="">萨米·赫迪拉</option>
+                    <option value="">阿德里安·拉比奥</option>
+                    <option value="">阿隆·拉姆塞</option>
+                    <option value="">若奥·坎塞洛</option>
+                    <option value="">阿莱克斯·桑德罗</option>
+                    <option value="">莱昂纳多·博努奇</option>
+                    <option value="">丹尼尔·鲁加尼</option>
+                    <option value="">马蒂亚·德西利奥</option>
+                    <option value="">乔吉奥·基耶利尼</option>
+                    <option value="">马丁·卡塞雷斯</option>
+                    <option value="">安德雷亚·巴尔扎利</option>
+                    <option value="">卢卡·佩莱格里尼</option>
+                    <option value="">沃伊切赫·什琴斯尼</option>
+                    <option value="">布冯</option>
+                    <option value="">卡洛·平索里奥</option>
+                    <option value="">马蒂亚·佩林</option>
+                    <option value="">劳伦迪普·雷内斯丘</option>
+                </select>
+                </div>
+            </div>
+        </div>
+        <!--尾部信息栏-->
+<div id="footer">
+        <!--小图标栏-->
+        <div id="d1">
+                <ul>
+                    <li><a href="https://weibo.com/juventusfccn"><img src="../imgs/weibo.svg" alt=""/></a></li>
+                    <li><a href=""><img src="../imgs/QQ.svg" alt=""/></a></li>
+                    <li><a id="weixin" href="javascript:"><img src="../imgs/wechat.svg" alt=""/></a></li>
+                </ul>
+        </div>
+        <!-- 文字信息栏-->
+        <div id="d2">
+            <ul id="u1">
+                <li><a href="index.html">主页</a></li>
+                <li><a href="news.html">新闻</a></li>
+                <li><a href="players.html">球员</a></li>
+                <li><a href="videos.html">视频</a></li>
+                <li><a href="honner.html">荣誉</a></li>
+                <li><a href="">商城</a></li>
+            </ul>
+            <ul id="u2">
+                <li><a href="players.html">教练</a></li>
+                <li><a href="players.html">主席</a></li>
+                <li><a href="honner.html">历史</a></li>
+                <li><a href="honner.html">传奇</a></li>
+                <li><a href="football.html">球场</a></li>
+                <li><a href="football.html">城市</a></li>
+            </ul>
+            <ul id="u3">
+                <li><a href="papers.html">条款和条件</a></li>
+                <li><a href="papers.html">隐私和政策</a></li>
+                <li><a href="papers.html">联系我们</a></li>
+                <li><a href="cookies.html">Cooike政策</a></li>
+            </ul>
+        </div>
+        <!-- 广告图标栏-->
+        <div id="d3">
+            <ul>
+                <li><img src="../fimg/adidas_grey.svg"alt=""/></li>
+                <li><img src="../fimg/jeep_grey.svg"alt=""/></li>
+                <li><img src="../fimg/allianz_grey.svg"alt=""/></li>
+                <li><img src="../fimg/balocco_grey.svg"alt=""/></li>
+                <li><img src="../fimg/cygames_grey.svg"alt=""/></li>
+                <li><img src="../fimg/frecciarossa_grey.svg"alt=""/></li>
+                <li><img src="../fimg/dececco_grey.svg"alt=""/></li>
+                <li><img src="../fimg/linglong_grey.svg"alt=""/>
+                <li><img src="../fimg/mms_grey.svg"alt=""/></li>
+                <li><img src="../fimg/noberasco_grey.svg" alt=""/></li>
+                <li><img src="../fimg/osonyq_grey.svg" alt=""/></li>
+                <li><img src="../fimg/philips_grey.svg" alt=""/></li>
+                <li><img src="../fimg/randstad_grey.svg" alt=""/></li>
+                <li><img src="../fimg/samsung_grey.svg" alt=""/></li>
+                <li><img src="../fimg/sky_grey.svg" alt=""/></li>
+                <li><img src="../fimg/ubi_grey.svg" alt=""/></li>
+                <li><img src="../fimg/betfair_grey.svg" alt=""/></li>
+                <li><img src="../fimg/ganten_grey.svg" alt=""/></li>
+                <li id="flogo"><img src="../fimg/logo-j2.svg" alt=""/></li>
+            </ul>
+        </div>
+        <!-- 版权声明-->
+        <p>版权所有尤文图斯©2019年版权所有</p>
+    </div>   
+</body>
+</html>

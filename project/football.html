@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title></title>
+    <style>
+        *{margin:0;padding:0;}
+        /*头部导航栏*/
+        #header{
+            min-width:1400px;
+            height:48px;
+            background-color:#fff;
+        }
+        /*头部尤文logo*/
+        #logo{
+            width:45px;
+            height:45px;
+            left:100px;
+        }
+        /*导航栏样式*/
+        a{
+            text-decoration:none;
+        }
+        #header ul li{
+            float: left;
+            list-style-type: none;
+            margin:0 20px;
+        }
+        /*头部文字交互效果*/
+        #header ul li a:hover{
+            color:#bda4b0;
+        }
+        #header ul li a{
+            text-decoration:none;
+            font-size:17px;
+            color:black;
+            text-align:center;
+            line-height:48px;
+        }
+        /*主体*/
+        #content{
+            min-width:1400px;
+            height:1085px;
+            background:url(../imgs/y7.jpg);
+        }
+        /*尾部*/
+        #footer:before{
+            content:" ";
+            display:table;
+        }
+        #footer{
+            min-width:1400px;
+            height:741px;
+            background-color:#fff;
+            position: relative;
+        }
+        /*尾部一层小图片栏*/
+        #d1{
+            min-width:1400px;
+            margin:auto ;
+            border-top:2px solid #b9b4b4;
+        }
+        #d1 ul{
+            width:300px;
+            margin:30px auto;
+        }
+        #d1 ul li{
+            list-style-type: none;
+            float: left;
+            margin:0 30px ;
+            cursor: pointer;
+            transition: all 0.6s;
+        }
+        /*小图片交互效果*/
+        #d1 ul li:hover{
+            transform: scale(1.1);
+        }
+        /*尾部二层文字信息栏*/
+        #d2{
+            min-width:1400px;
+            margin:90px  auto ;
+            border-top:2px solid #b9b4b4;
+        }
+        #u1{
+            width:65px;
+            float: left;
+            margin-left:650px;
+
+        }
+        #u2{
+            width:35px;
+            float:left;
+            margin-left:193px ;
+        }
+        #u3{
+            width:87px;
+            float:left;
+            margin-left: 179px;
+        }
+        #d2 ul li{
+            list-style-type:none;
+            margin:10px 0;
+        }
+        /*文字交互效果*/
+        #d2 ul li a:hover{
+            color:#000;
+        }
+        #d2 ul li a{
+            color:#b9b4b4;
+        }
+        /*微信二维码*/
+        #weixin{
+            position:relative;
+        }
+        #weixin::after{
+            content: url(../imgs/ewm.jpg);
+            position: absolute;
+            right: -51px;
+            top: 10px;
+            z-index: 99;
+            width:50px;
+            height: 50px;
+            border: 3px solid #000;
+            border-radius: 4px;
+            transform-origin: top right;
+            transform: scale(0);
+            opacity: 0;
+            -webkit-transition: all .4s ease-in-out;
+            -o-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+        }
+        #weixin:hover::after{
+            transform:scale(1);
+            opacity: 1;
+        }
+        /*尾部三层广告图标栏*/
+        #d3{
+            min-width:1400px;
+            height:420px;
+            margin-top:200px;
+            background:#000;
+        }
+        #d3 ul{
+            width:800px;
+            margin:0 auto;
+        }
+        #d3 ul li{
+            list-style-type: none;
+            float: left;
+            margin-right:15px;
+            cursor: pointer;
+            transition: all 0.6s;
+        }
+        /*广告图片交互效果*/
+        #d3 ul li:hover{
+            transform: scale(1.3);
+        }
+        #d3 ul li img{
+            width:110px;
+            height:100px;
+        }
+        /*尾部尤文logo*/
+        #d3 #flogo{
+            margin-left:320px;
+        }
+        /*版权信息*/
+        #footer p{
+            text-align: center;
+        }
+        #content div{
+            float:left;
+        }
+        #pic1 img{
+            width:500px;
+            height:500px;
+        }
+        #pic2 img{
+            width:500px;
+            height:500px;
+        }
+        #pic3 img{
+            width:564px;
+            height:500px;
+        }
+        #pic4 img{
+            width:725px;
+            height:400px;
+        }
+        #content img{
+            cursor: pointer;
+            transition: all 0.6s;
+        }
+        #content img:hover{
+            transform: scale(1.3);
+        }
+    </style>
+</head>
+<body>
+<!--头部导航栏-->
+<div id="header">
+        <ul>
+            <li>
+                <a href="index.html"><img id="logo" src="../imgs/logo-j.svg" title="尤文图斯"></a>
+            </li>
+            <li><a href="index.html">主页</a></li>
+            <li><a href="news.html">新闻</a></li>
+            <li><a href="players.html">球员</a></li>
+            <li><a href="videos.html">视频</a></li>
+            <li><a href="honner.html">荣誉殿堂</a></li>
+            <li id="store"><a href="">官方商城</a></li>
+        </ul>
+</div>
+<!--中间背景栏-->
+<div id="content">
+    <div id="pic1"><img src="../imgs/football1.jpg" alt=""></div>
+    <div id="pic2"><img src="../imgs/football2.jpg" alt=""></div>
+    <div id="pic3"><img src="../imgs/football3.jpg" alt=""></div>
+    <div id="pic4"><img src="../imgs/football4.jpg" alt=""></div>
+</div>
+<!--尾部信息栏-->
+<div id="footer">
+    <!--小图标栏-->
+    <div id="d1">
+            <ul>
+                <li><a href="https://weibo.com/juventusfccn"><img src="../imgs/weibo.svg" alt=""/></a></li>
+                <li><a href=""><img src="../imgs/QQ.svg" alt=""/></a></li>
+                <li><a id="weixin" href="javascript:"><img src="../imgs/wechat.svg" alt=""/></a></li>
+            </ul>
+    </div>
+    <!-- 文字信息栏-->
+    <div id="d2">
+        <ul id="u1">
+            <li><a href="index.html">主页</a></li>
+            <li><a href="news.html">新闻</a></li>
+            <li><a href="players.html">球员</a></li>
+            <li><a href="videos.html">视频</a></li>
+            <li><a href="honner.html">荣誉</a></li>
+            <li><a href="">商城</a></li>
+        </ul>
+        <ul id="u2">
+            <li><a href="players.html">教练</a></li>
+            <li><a href="players.html">主席</a></li>
+            <li><a href="honner.html">历史</a></li>
+            <li><a href="honner.html">传奇</a></li>
+            <li><a href="football.html">球场</a></li>
+            <li><a href="football.html">城市</a></li>
+        </ul>
+        <ul id="u3">
+            <li><a href="papers.html">条款和条件</a></li>
+            <li><a href="papers.html">隐私和政策</a></li>
+            <li><a href="papers.html">联系我们</a></li>
+            <li><a href="cookies.html">Cooike政策</a></li>
+        </ul>
+    </div>
+    <!-- 广告图标栏-->
+    <div id="d3">
+        <ul>
+            <li><img src="../fimg/adidas_grey.svg"alt=""/></li>
+            <li><img src="../fimg/jeep_grey.svg"alt=""/></li>
+            <li><img src="../fimg/allianz_grey.svg"alt=""/></li>
+            <li><img src="../fimg/balocco_grey.svg"alt=""/></li>
+            <li><img src="../fimg/cygames_grey.svg"alt=""/></li>
+            <li><img src="../fimg/frecciarossa_grey.svg"alt=""/></li>
+            <li><img src="../fimg/dececco_grey.svg"alt=""/></li>
+            <li><img src="../fimg/linglong_grey.svg"alt=""/>
+            <li><img src="../fimg/mms_grey.svg"alt=""/></li>
+            <li><img src="../fimg/noberasco_grey.svg" alt=""/></li>
+            <li><img src="../fimg/osonyq_grey.svg" alt=""/></li>
+            <li><img src="../fimg/philips_grey.svg" alt=""/></li>
+            <li><img src="../fimg/randstad_grey.svg" alt=""/></li>
+            <li><img src="../fimg/samsung_grey.svg" alt=""/></li>
+            <li><img src="../fimg/sky_grey.svg" alt=""/></li>
+            <li><img src="../fimg/ubi_grey.svg" alt=""/></li>
+            <li><img src="../fimg/betfair_grey.svg" alt=""/></li>
+            <li><img src="../fimg/ganten_grey.svg" alt=""/></li>
+            <li id="flogo"><img src="../fimg/logo-j2.svg" alt=""/></li>
+        </ul>
+    </div>
+    <!-- 版权声明-->
+    <p>版权所有尤文图斯©2019年版权所有</p>
+</div>
+</body>
+<script>
+    function show(){
+        if(!uname.value){
+            first.innerHTML="邮箱或手机号格式错误";
+        }
+    }
+</script>
+</html>

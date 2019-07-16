@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*清除外边距内边距*/
+        *{margin:0;padding:0;}
+        /*头部导航栏开始*/
+        #header{
+            min-width:2000px;
+        }
+        /*头部一级导航栏*/
+        #top_1{
+            height:22px;
+            background: #000;
+            
+        }
+        ul li{
+            list-style-type: none;
+            float:left;
+        }
+        a{
+            text-decoration: none;
+        }
+        #top_1 a,#top_3 a{
+            color:gray;
+        }
+        #top_1 a:hover{
+            color:#fff;
+        }
+        #L_ul{
+            margin-left:350px;
+        }
+        #L_ul li{
+            margin:0 10px;
+        }
+        #R_ul{
+            float:right;
+            margin-right:400px;
+        }
+        #R_ul li{
+            margin:0 10px;
+        }
+        #R_ul li a:hover{
+            color:yellow;
+        }
+        /*头部一级导航栏消下边距*/
+        #top_2:after{
+            content:" ";
+            display:table;
+        }
+        /*头部二级logo栏*/
+        #top_2{
+            height:120px;
+        }
+        /*尤文标题*/
+        #title{
+            color: #000;
+            font-size:30px;
+            margin:38px 0 0 21px;
+        }
+        /*尤文logo*/
+        #logo{
+            width:54px;
+            height:85px;
+            margin-top: 15px;
+            margin-left:359px;
+        }
+        /*阿迪达斯logo*/
+        #adidas{
+            width:126px;
+            height:120px;
+            margin-left:645px;
+        }
+        /*jeeplogo*/
+        #jeep{
+            width: 133px;
+            height: 82px;
+            margin:16px 0 0 4px;
+        }
+        /*头部三级导航栏*/
+        #top_3{
+            height:60px;
+            background:#000;
+            font-size:25px;
+        }
+        #top_3 a:hover{
+            color:#fff;
+        }
+        #top_3 ul{
+            width:800px;
+            margin:0 auto;
+        }
+        #top_3 ul li{
+            margin:0 40px;
+            line-height:30px;
+            border-bottom:2px solid #000;
+        }
+        #top_3 ul li:hover{
+            border-bottom:2px solid #fff;
+        }
+        /* 头部导航栏结束 */
+        /* 主体 */
+        #content{
+            min-width:2000px;
+            height:1560px;
+            background:#000;
+        }
+        #out{
+            width:1000px;
+            height:1480px;
+            margin:0 auto;
+            background:#fff;
+            
+        }
+        #in{
+            width:1000px;
+            height:998px;
+        }
+        /* 标题 */
+        #line{
+            width:50%;
+            height:50px;
+            margin:0 auto;
+            background:#fff;
+            border-bottom:2px solid #000;
+        }
+        #line p{
+            font-size:25px;
+            margin-left:10px;
+            font-weight:bold;
+            text-align:center;
+            line-height: 50px;
+        }
+       
+        /*尾部*/
+        #footer:before{
+            content:" ";
+            display:table;
+        }
+        #footer{
+            min-width:2000px;
+            height:500px;
+            background-color:#fff;
+            position: relative;
+        }
+        /*尾部一层小图片栏*/
+        #d1{
+            min-width:1400px;
+            margin:auto ;
+            border-top:2px solid #b9b4b4;
+        }
+        #d1 ul{
+            width:300px;
+            margin:30px auto;
+        }
+        #d1 ul li{
+            list-style-type: none;
+            float: left;
+            margin:0 30px ;
+            cursor: pointer;
+            transition: all 0.6s;
+        }
+        /*小图片交互效果*/
+        #d1 ul li:hover{
+            transform: scale(1.1);
+        }
+        /*尾部二层文字信息栏*/
+        #d2{
+            min-width:1400px;
+            margin:90px  auto ;
+            border-top:2px solid #b9b4b4;
+        }
+        #u1{
+            width:63px;
+            float: left;
+            margin-left:650px;
+
+        }
+        #u2{
+            width:35px;
+            float:left;
+            margin-left:193px ;
+        }
+        #u3{
+            width:87px;
+            float:left;
+            margin-left: 179px;
+        }
+        #d2 ul li{
+            list-style-type:none;
+            margin:10px 0;
+        }
+        /*文字交互效果*/
+        #d2 ul li a:hover{
+            color:#000;
+        }
+        #d2 ul li a{
+            color:#b9b4b4;
+        }
+        /*微信二维码*/
+        #weixin{
+            position:relative;
+        }
+        #weixin::after{
+            content: url(../imgs/ewm.jpg);
+            position: absolute;
+            right: -51px;
+            top: 10px;
+            z-index: 99;
+            width:50px;
+            height: 50px;
+            border: 3px solid #000;
+            border-radius: 4px;
+            transform-origin: top right;
+            transform: scale(0);
+            opacity: 0;
+            -webkit-transition: all .4s ease-in-out;
+            -o-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+        }
+        #weixin:hover::after{
+            transform:scale(1);
+            opacity: 1;
+        }
+        /*尾部三层广告图标栏*/
+        #d3{
+            min-width:1400px;
+            height:420px;
+            margin-top:290px;
+            background:#000;
+        }
+        #d3 ul{
+            width:800px;
+            margin:0 auto;
+        }
+        #d3 ul li{
+            list-style-type: none;
+            float: left;
+            margin-right:15px;
+            cursor: pointer;
+            transition: all 0.6s;
+        }
+        /*广告图片交互效果*/
+        #d3 ul li:hover{
+            transform: scale(1.3);
+        }
+        #d3 ul li img{
+            width:110px;
+            height:100px;
+        }
+        /*尾部尤文logo*/
+        #d3 #flogo{
+            margin-left:320px;
+        }
+        /*版权信息*/
+        #footer p{
+            text-align: center;
+        }
+        .in_floor{
+            width:940px;
+            height:200px;
+            position:relative;
+            overflow: hidden;
+            margin:auto;
+            margin-bottom:10px;
+            background:#fff;
+            border-left:3px solid #f7385c94;
+            border-right:3px solid #f7385c94;
+            border-bottom: 3px solid #f7385c94;
+        }
+        .in_floor:hover{
+            background:#ececec;
+        }
+        .in_floor:hover .fudong{
+            top:60px;
+        }
+        .times{
+            position: absolute;
+            top:18px;
+            left:156px;
+            font-size:40px;
+            font-family:"Tahoma";
+        }
+        .fonts{
+            position: absolute;
+            top:24px;
+            left:220px;
+            font-size:15px;
+        }
+        .fonts p{
+            font-size:10px;
+        }
+        .fudong{
+            position: absolute;
+            width:940px;
+            height:140px;
+            background:rgba(202, 195, 195, 0.5);
+            top:143px;
+            left:1px;
+            transition:.3s;
+            transition-timing-function:ease-in;
+        }
+        .t{
+            margin-bottom:31px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            line-height:55px;
+        }
+        .f{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <!--头部导航栏-->
+    <div id="header">
+            <!-- 头部一级导航栏 -->
+            <div id="top_1">
+                <ul id="L_ul">
+                    <li><a href="index.html">尤文图斯</a></li>
+                    <li><a href="">官方商城</a></li>
+                    <li><a href="">JUVENTUS TV</a></li>
+                    <li><a href="">媒体报道</a></li>
+                    <li><a href="friends.html">合作伙伴</a></li>
+                </ul>
+                <ul id="R_ul">
+                    <li><a href="login.html">登录</a></li>
+                    <li><a href="user_post.html">注册</a></li>
+                </ul>  
+            </div>
+            <!-- 头部二级logo栏 -->
+            <div id="top_2">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <img id="logo" src="../imgs/logo-j.svg" title="尤文图斯"/>
+                        </a>
+                    </li>
+                    <li>
+                        <h3 id="title" class="font-weight-bold">尤文图斯 官网</h3>
+                    </li>
+                    <li>
+                        <a href="https://www.adidas.com.cn"><img id="adidas" src="../imgs/adidas.jpg" title="阿迪达斯"/></a>
+                    </li>
+                    <li>
+                        <a href="https://www.jeep.com.cn/"><img id="jeep" src="../imgs/jeep.jpg" title="jeep"/></a>
+                    </li>
+                </ul>
+            </div>
+            <div id="top_3">
+                <ul>
+                    <li><a href="index.html">主页</a></li>
+                    <li><a href="news.html">新闻</a></li>
+                    <li><a href="players.html">球员</a></li>
+                    <li><a href="videos.html">视频</a></li>
+                    <li><a href="honner.html">荣誉殿堂</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 主体 -->
+        <div id="content">
+            <!-- 主体标题 -->
+            <div id="line"><p>荣誉殿堂</p></div>
+            <!-- 主体详情页面 -->
+            <div id="out">
+                <div id="in">
+                    <div class="in_floor">
+                        <img src="../imgs/trophy_scudetto.png" alt="">
+                        <h1 class="times">37</h1>
+                        <div class="fonts">
+                            <h2>意甲联赛冠军奖杯</h2>
+                            <p>1904-1905 1925-1926 1930-1931 1931-1932 1932-1933 1933-1934 1934-1935 1949-1950 1951-1952 1957-1958 1959-1960 1960-1961 1966-1967 1971-1972 1972-1973 1974-1975 1976-1977 1977-1978 1980-1981 1981-1982 1983-1984 1985-1986 1994-1995 1996-1997 1997-1998 2001-2002 2002-2003 2011-2012 2012-2013 2013-2014 2014-2015 2015-2016 2016-2017 2017-2018</p>
+                        </div>
+                        <div class="fudong">
+                            <p class="t"><strong>意甲联赛八连冠2011-2018</strong></p>
+                            <p class="f">Juve win fourth Coppa Italia in a row!The most successful team in the history of the competition, this is Juventus’ 13th Coppa Italia triumph and the achievement also extends Massimiliano Allegri’s 100%.</p>
+                        </div>
+                    </div>
+                    <div class="in_floor">
+                            <img src="../imgs/trophy_champions_league.png" alt="">
+                            <h1 class="times">2</h1>
+                            <div class="fonts">
+                                <h2>欧洲冠军联赛冠军奖杯</h2>
+                                <p> 1984-1985 1995-1996</p>
+                            </div>
+                            <div class="fudong">
+                                <p class="t"><strong>欧冠冠军</strong></p>
+                                <p class="f">Rome’s Stadio Olimpico was the venue chosen to host the 1996 Champions League final on 22 May between two giants of European football Juventus and Ajax.Lippi’s troops were straight in the driving seat and went ahead goalscoring opportunity.</p>
+                            </div>
+                        </div>
+                    <div class="in_floor">
+                            <img src="../imgs/trophy_coppa_italia.png" alt="">
+                            <h1 class="times">13</h1>
+                            <div class="fonts">
+                                <h2>意大利杯冠军奖杯</h2>
+                                <p>1937-38 1941-42 1958-59 1959-60 1964-65 1978-79 1982-83 1989-90 1994-95 2014-15 2015-16 2016-17 2017-18</p>
+                            </div>
+                            <div class="fudong">
+                                <p class="t"><strong>意大利杯冠军</strong></p>
+                                <p class="f">After overcoming Ajax on penalties during the Champions League final in Rome, Juventus booked their tickets to Tokyo, where they would contest the Intercontinental Cup against River Plate, winners of the Copa Libertadores.</p>
+                            </div>
+                        </div>
+                    <div class="in_floor">
+                            <img src="../imgs/trophy_coppa_intercontinentale.png" alt="">
+                            <h1 class="times">2</h1>
+                            <div class="fonts">
+                                <h2>世俱杯冠军奖杯</h2>
+                                <p>1995 1996</p>
+                            </div>
+                            <div class="fudong">
+                                <p class="t"><strong>世俱杯冠军</strong></p>
+                                <p class="f">This was the Bianconeri’s third appearance in the competition following the defeat in 1973 and victory in 1985 against Argentinos Juniors. A tense encounter at Japan’s National Stadium was locked at a goalless stalemate then Del Piero clinched.</p>
+                            </div>
+                        </div>
+                    <div class="in_floor">
+                            <img src="../imgs/trophy_coppa_uefa.png" alt="">
+                            <h1 class="times">3</h1>
+                            <div class="fonts">
+                                <h2>欧洲联盟杯冠军奖杯</h2>
+                                <p>1976-77 1989-90 1992-93 </p>
+                            </div>
+                            <div class="fudong">
+                                <p class="t"><strong>欧洲联盟杯冠军</strong></p>
+                                <p class="f">Even though Giovanni Trapattoni’s men began the quarter-final against FC Haka of Finland as firm favourites, the tie proved trickier than expected as the Bianconeri were forced to settle for a 2-0 overall victory. </p>
+                            </div>
+                        </div>
+                    <div class="in_floor">
+                            <img src="../imgs/trophy_supercoppa_europea.png" alt="">
+                            <h1 class="times">2</h1>
+                            <div class="fonts">
+                                <h2>欧洲超级杯冠军奖杯</h2>
+                                <p>1985 1996</p>
+                            </div>
+                            <div class="fudong">
+                                <p class="t"><strong>欧洲超级杯冠军</strong></p>
+                                <p class="f">Even though Giovanni Trapattoni’s men began the quarter-final against FC Haka of Finland as firm favourites, the tie proved trickier than expected as the Bianconeri were forced to settle for a 2-0 overall victory. </p>
+                            </div>
+                        </div>
+                    <div class="in_floor">
+                            <img src="../imgs/trophy_coppa_delle_coppe.png" alt="">
+                            <h1 class="times">1</h1>
+                            <div class="fonts">
+                                <h2>欧洲优胜者杯冠军奖杯</h2>
+                                <p>1983-84</p>
+                            </div>
+                            <div class="fudong">
+                                <p class="t"><strong>欧洲优胜者杯冠军</strong></p>
+                                <p class="f">However, Paris Saint-Germain presented a much tougher test in the last 16. The first leg at the Parc des Princes finished 2-2, and Juve then demonstrated their tactical nouse a fortnight later in Turin by holding out for a 0-0 stalemate last eight via the away goals rule.</p>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        <!--尾部信息栏-->
+<div id="footer">
+        <!--小图标栏-->
+        <div id="d1">
+                <ul>
+                    <li><a href="https://weibo.com/juventusfccn"><img src="../imgs/weibo.svg" alt=""/></a></li>
+                    <li><a href=""><img src="../imgs/QQ.svg" alt=""/></a></li>
+                    <li><a id="weixin" href="javascript:"><img src="../imgs/wechat.svg" alt=""/></a></li>
+                </ul>
+        </div>
+        <!-- 文字信息栏-->
+        <div id="d2">
+            <ul id="u1">
+                <li><a href="index.html">主页</a></li>
+                <li><a href="news.html">新闻</a></li>
+                <li><a href="players.html">球员</a></li>
+                <li><a href="videos.html">视频</a></li>
+                <li><a href="honner.html">荣誉</a></li>
+                <li><a href="">商城</a></li>
+            </ul>
+            <ul id="u2">
+                <li><a href="players.html">教练</a></li>
+                <li><a href="players.html">主席</a></li>
+                <li><a href="honner.html">历史</a></li>
+                <li><a href="honner.html">传奇</a></li>
+                <li><a href="football.html">球场</a></li>
+                <li><a href="football.html">城市</a></li>
+            </ul>
+            <ul id="u3">
+                <li><a href="papers.html">条款和条件</a></li>
+                <li><a href="papers.html">隐私和政策</a></li>
+                <li><a href="papers.html">联系我们</a></li>
+                <li><a href="cookies.html">Cooike政策</a></li>
+            </ul>
+        </div>
+        <!-- 广告图标栏-->
+        <div id="d3">
+            <ul>
+                <li><img src="../fimg/adidas_grey.svg"alt=""/></li>
+                <li><img src="../fimg/jeep_grey.svg"alt=""/></li>
+                <li><img src="../fimg/allianz_grey.svg"alt=""/></li>
+                <li><img src="../fimg/balocco_grey.svg"alt=""/></li>
+                <li><img src="../fimg/cygames_grey.svg"alt=""/></li>
+                <li><img src="../fimg/frecciarossa_grey.svg"alt=""/></li>
+                <li><img src="../fimg/dececco_grey.svg"alt=""/></li>
+                <li><img src="../fimg/linglong_grey.svg"alt=""/>
+                <li><img src="../fimg/mms_grey.svg"alt=""/></li>
+                <li><img src="../fimg/noberasco_grey.svg" alt=""/></li>
+                <li><img src="../fimg/osonyq_grey.svg" alt=""/></li>
+                <li><img src="../fimg/philips_grey.svg" alt=""/></li>
+                <li><img src="../fimg/randstad_grey.svg" alt=""/></li>
+                <li><img src="../fimg/samsung_grey.svg" alt=""/></li>
+                <li><img src="../fimg/sky_grey.svg" alt=""/></li>
+                <li><img src="../fimg/ubi_grey.svg" alt=""/></li>
+                <li><img src="../fimg/betfair_grey.svg" alt=""/></li>
+                <li><img src="../fimg/ganten_grey.svg" alt=""/></li>
+                <li id="flogo"><img src="../fimg/logo-j2.svg" alt=""/></li>
+            </ul>
+        </div>
+        <!-- 版权声明-->
+        <p>版权所有尤文图斯©2019年版权所有</p>
+    </div>   
+</body>
+</html>

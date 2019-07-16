@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        /*清除外边距内边距*/
+        *{margin:0;padding:0;}
+        /*头部导航栏开始*/
+        #top_1::before{
+            content:"";
+            display:table;
+        }
+        #header{
+            min-width:2000px;
+        }
+        /*头部一级导航栏*/
+        #top_1{
+            height:22px;
+            background: #000;
+            
+        }
+        ul li{
+            list-style-type: none;
+            float:left;
+        }
+        #top_1 a{
+            text-decoration: none;
+        }
+        #top_1 a,#top_3 a{
+            color:gray;
+        }
+        #top_1 a:hover{
+            color:#fff;
+        }
+        #L_ul{
+            margin-left:350px;
+        }
+        #L_ul li{
+            margin:0 10px;
+        }
+        #dl a{
+            margin-left:700px;
+        }
+        #dl a:hover{
+            color:yellow;
+        }
+        /*头部一级导航栏消下边距*/
+        #top_2:after{
+            content:" ";
+            display:table;
+        }
+        /*头部二级logo栏*/
+        #top_2{
+            height:120px;
+        }
+        
+        /*尤文标题*/
+        #title{
+            color: #000;
+            font-size:30px;
+            margin:38px 0 0 21px;
+        }
+        /*尤文logo*/
+        #logo{
+            width:54px;
+            height:85px;
+            margin-top: 15px;
+            margin-left:359px;
+        }
+        /*阿迪达斯logo*/
+        #adidas{
+            width:126px;
+            height:120px;
+            margin-left:645px;
+        }
+        /*jeeplogo*/
+        #jeep{
+            width: 133px;
+            height: 82px;
+            margin:16px 0 0 4px;
+        }
+        /*头部三级导航栏*/
+        #top_3{
+            height:60px;
+            background:#000;
+            font-size:25px;
+        }
+        #top_3 a{
+            text-decoration: none;
+        }
+        #top_3 a:hover{
+            color:#fff;
+        }
+        #top_3 ul{
+            width:800px;
+            margin:0 auto;
+        }
+        #top_3 ul li{
+            margin:0 40px;
+            line-height:30px;
+            border-bottom:2px solid #000;
+        }
+        #top_3 ul li:hover{
+            border-bottom:2px solid #fff;
+        }
+        /* 头部导航栏结束 */
+        /* 主体 */
+        #content{
+            min-width: 2000px;
+            height:1560px;
+            background:#000;
+        }
+        .container{
+            width:1000px;
+            height:1480px;
+            margin:0 auto;
+            background:#fff;
+        }
+        .container p{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-left:10px; 
+            margin-bottom:20px;
+            font-size:18px;
+        }
+        #parent{
+            color:#000;
+        }
+        /* 标题 */
+        #line{
+            width:50%;
+            margin:0 auto;
+            background:#fff;
+            border-bottom:2px solid #000;
+        }
+        #line p{
+            width:180px;
+            font-size:30px;
+            margin:0 auto;
+            font-weight:bold;
+        }
+        /* 详情样式 */
+        .card-link{
+            color:#798088;
+        }
+        a:hover{
+            color:#000;
+        }
+        /*尾部*/
+        #footer:before{
+            content:" ";
+            display:table;
+        }
+        #footer{
+            min-width:2000px;
+            height:500px;
+            background-color:#fff;
+            position: relative;
+        }
+        /*尾部一层小图片栏*/
+        #d1{
+            min-width:1400px;
+            margin:auto ;
+            border-top:2px solid #b9b4b4;
+        }
+        #d1 ul{
+            width:300px;
+            margin:30px auto;
+        }
+        #d1 ul li{
+            list-style-type: none;
+            float: left;
+            margin:0 30px ;
+            cursor: pointer;
+            transition: all 0.6s;
+        }
+        /*小图片交互效果*/
+        #d1 ul li:hover{
+            transform: scale(1.1);
+        }
+        /*尾部二层文字信息栏*/
+        #d2{
+            min-width:1400px;
+            margin:90px  auto ;
+            border-top:2px solid #b9b4b4;
+        }
+        #d2 a{
+            text-decoration:none;
+        }
+        #u1{
+            width:63px;
+            float: left;
+            margin-left:650px;
+        }
+        #u2{
+            width:35px;
+            float:left;
+            margin-left:193px ;
+        }
+        #u3{
+            width:87px;
+            float:left;
+            margin-left: 179px;
+        }
+        #d2 ul li{
+            list-style-type:none;
+            margin:10px 0;
+        }
+        /*文字交互效果*/
+        #d2 ul li a:hover{
+            color:#000;
+        }
+        #d2 ul li a{
+            color:#b9b4b4;
+        }
+        /*微信二维码*/
+        #weixin{
+            position:relative;
+        }
+        #weixin::after{
+            content: url(../imgs/ewm.jpg);
+            position: absolute;
+            right: -51px;
+            top: 10px;
+            z-index: 99;
+            width:50px;
+            height: 50px;
+            border: 3px solid #000;
+            border-radius: 4px;
+            transform-origin: top right;
+            transform: scale(0);
+            opacity: 0;
+            -webkit-transition: all .4s ease-in-out;
+            -o-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+        }
+        #weixin:hover::after{
+            transform:scale(1);
+            opacity: 1;
+        }
+        /*尾部三层广告图标栏*/
+        #d3{
+            min-width:1400px;
+            height:420px;
+            margin-top:290px;
+            background:#000;
+        }
+        #d3 ul{
+            width:800px;
+            margin:0 auto;
+        }
+        #d3 ul li{
+            list-style-type: none;
+            float: left;
+            margin-right:15px;
+            cursor: pointer;
+            transition: all 0.6s;
+        }
+        /*广告图片交互效果*/
+        #d3 ul li:hover{
+            transform: scale(1.3);
+        }
+        #d3 ul li img{
+            width:110px;
+            height:100px;
+        }
+        /*尾部尤文logo*/
+        #d3 #flogo{
+            margin-left:320px;
+        }
+        /*版权信息*/
+        #footer p{
+            text-align: center;
+        }
+        u{
+            font-weight:bold;
+        }
+        #cont1{
+            width:708px;
+            border-bottom:3px solid #000;
+        }
+        #cont2 ul{
+            width:900px;
+            height:290px;
+            margin:0 auto;
+        }
+        #cont2 ul li{
+            line-height:40px;
+            list-style:square;
+        }
+        table{
+            width:900px;
+            margin:0 auto;
+            text-align:center;
+        }
+        table th,td{
+            border:2px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <!--头部导航栏-->
+    <div id="header">
+            <!-- 头部一级导航栏 -->
+            <div id="top_1">
+                <ul id="L_ul">
+                    <li><a href="index.html">尤文图斯</a></li>
+                    <li><a href="">官方商城</a></li>
+                    <li><a href="">JUVENTUS TV</a></li>
+                    <li><a href="">媒体报道</a></li>
+                    <li><a href="friends.html">合作伙伴</a></li>
+                    <li id="dl"><a href="login.html">登录</a></li>
+                    <li><a href="user_post.html">注册</a></li>
+                </ul>
+            </div>
+            <!-- 头部二级logo栏 -->
+            <div id="top_2">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <img id="logo" src="../imgs/logo-j.svg" title="尤文图斯"/>
+                        </a>
+                    </li>
+                    <li>
+                        <h3 id="title" class="font-weight-bold">尤文图斯 官网</h3>
+                    </li>
+                    <li>
+                        <a href="https://www.adidas.com.cn"><img id="adidas" src="../imgs/adidas.jpg" title="阿迪达斯"/></a>
+                    </li>
+                    <li>
+                        <a href="https://www.jeep.com.cn/"><img id="jeep" src="../imgs/jeep.jpg" title="jeep"/></a>
+                    </li>
+                </ul>
+            </div>
+            <div id="top_3">
+                <ul>
+                    <li><a href="index.html">主页</a></li>
+                    <li><a href="news.html">新闻</a></li>
+                    <li><a href="players.html">球员</a></li>
+                    <li><a href="videos.html">视频</a></li>
+                    <li><a href="honner.html">荣誉殿堂</a></li>
+                </ul>
+            </div>
+        </div>        
+        <!-- 主体详情页面 -->
+        <!-- 主体标题 -->
+        <div id="content">
+            <div id="line"><p>Cooike政策</p></div>
+            <div class="container">
+                <p>La nostra informativa ha l’intento di descrivere le tipologie di cookie utilizzati e le finalità dei cookie installati dai siti www.juventus.com e store.juventus.com (“Siti Web Juventus”) nonché di descrivere e definire quelli di eventuali terze parti coinvolte.</p>
+                    <div id="parent">
+                        <div class="card">
+                            <div class="card-header">
+                                <a href="#c1" data-toggle="collapse" class="card-link">︾Che cosa sono i cookie?</a>
+                            </div>
+                            <div class="collapse" id="c1" data-parent="#parent">
+                                <div class="card-body">
+                                        I cookie sono stringhe di testo di piccole dimensioni che i siti visitati dall’utente inviano al terminale dell’utente (solitamente browser), dove vengono memorizzati per poi essere ritrasmessi agli stessi siti alla successiva visita del medesimo utente.
+                                        I cookie vengono distinti in base al soggetto che li installa sul terminale dell’utente:Cookie proprietari (cd. “di prima parte”), installati dallo stesso gestore del sito che l’utente sta visitando, al fine di consentire all’utente di navigare in modo più efficiente e/o di monitorare le azioni esercitate dallo stesso;
+                                        Oppure nel corso della navigazione sul sito, l’utente può ricevere sul suo terminale anche cookie che vengono inviati da siti o da web server, diversi da quello che si sta attualmente visitando, per le medesime finalità sopra citate (cd. “di terze parti”).
+                                        I cookie sono usati per differenti finalità e si differenziano gli uni dagli altri proprio sulla base delle finalità perseguite da chi li utilizza. Si distinguono in:
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <a href="#c2" data-toggle="collapse" class="card-link">︾Cookie di terze parti</a>
+                            </div>
+                            <div class="collapse" id="c2" data-parent="#parent">
+                                <div class="card-body">
+                                        <u>Cookie “strettamente necessari di navigazione o di sessione”</u>
+                                        <p>Questi cookie sono essenziali al fine di consentire di navigare in tutto il sito ed utilizzare a pieno le sue caratteristiche, come ad esempio accedere alle varie aree protette del sito. Senza questi cookie alcuni servizi necessari, come la compilazione di un form per un concorso, l’autenticazione per accesso ad aree riservate o la realizzazione di un acquisto, non possono essere fruiti.</p>
+                                        <u>Cookie “di funzionalità”</u>
+                                        <p>  I cookie consentono al sito di ricordare le scelte fatte dall’utente (come il nome, la lingua o la regione di provenienza) permettendo all’utente la navigazione in funzione di una serie di criteri selezionati e forniscono funzionalità avanzate personalizzate. Questi cookie possono essere utilizzati anche per ricordare le modifiche apportate alla dimensione del testo, font ed altre parti di pagine web che è possibile personalizzare. Essi possono anche essere utilizzati per fornire servizi che hai chiesto come guardare un video o i commenti su un blog, memorizzare i consensi prestati dall’utente.</p>
+                                        <u>Cookie analitici “finalizzati alle prestazioni”</u>
+                                        <p>Questi cookie raccolgono informazioni su come gli utenti utilizzano un sito, ad esempio, quali sono le pagine più visitate, se si ricevono messaggi di errore da pagine web. Questi cookie non raccolgono informazioni che identificano un visitatore. Tutte le informazioni raccolte tramite cookie sono aggregate e quindi anonime. Vengono utilizzati solo per migliorare il funzionamento di un sito web.</p>  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <a href="#c3" data-toggle="collapse" class="card-link">︾ I tipi di cookie che utilizziamo</a>
+                            </div>
+                            <div class="collapse" id="c3" data-parent="#parent">
+                                <div class="card-body">
+                                        <strong>Statistica</strong>
+                                        <p>Allo scopo di migliorare e ottimizzare costantemente il servizio, i Siti Web Juventus utilizzano tecnologie di tracciamento di Google Analytics e Piwik per eseguire analisi statistiche del sito.</p>
+                                        <strong>Google Analytics</strong>
+                                        <p>Google Analytics con IP anonimizzato è un servizio di analisi web fornito da Google , Inc. ( "Google"), che è il relativo titolare del trattamento, che consente di analizzare come l’utente utilizza il sito. Le informazioni generate dal cookie sull'utilizzo dei Siti Web Juventus (compreso l’indirizzo IP anonimo) verranno trasmesse e depositate presso i server di Google negli Stati Uniti. Google utilizzerà queste informazioni allo scopo di esaminare l’utilizzo del sito da parte dell’utente, compilare report sulle attività del sito per gli operatori dello stesso e condividerli con gli altri servizi sviluppati da Google. Google non assocerà l’indirizzo IP a nessun altro dato posseduto da Google.https://www.google.it/intl/it_it/policies/technologies/cookies/</p>
+                                        <strong>Piwik</strong>
+                                        <p>Piwik è un software di web analytics open-source. Piwik utilizza dei "cookies", che sono file di testo depositati sul computer dell’utente per consentire di analizzare come utilizza il sito. Le informazioni generate dal cookie sull'utilizzo del sito web (compreso l’indirizzo IP anonimo) verranno trasmesse e depositate presso i server del server provider in Germania. Piwik utilizzerà queste informazioni allo scopo di esaminare l’ utilizzo del sito, compilare report sulle attività del sito per gli operatori dello stesso e fornire altri servizi relativi alle attività del sito e all'utilizzo di internet.</p>
+                                        <strong>Profilazione e targeting Pubblicitario</strong>
+                                        <p>I Siti Web Juventus utilizzano oggetti incorporati che scaricano cookie di terze parti, spesso in grado di effettuare una profilazione degli interessi, ricerche o della navigazione dell'utente. Nel caso in cui sia installato un servizio di questo tipo, è possibile che, anche nel caso gli utenti non utilizzino il servizio, lo stesso raccolga dati di traffico relativi alle pagine in cui è installato. Alcuni dei servizi di seguito indicati potrebbero utilizzare cookie per identificare l’utente o utilizzare la tecnica del behavioral retargeting, ossia visualizzare annunci pubblicitari personalizzati in base agli interessi e al comportamento dell’utente, rilevati anche al di fuori dei Siti Web Juventus. Per avere maggiori informazioni in merito, ti suggeriamo di verificare le informative privacy dei rispettivi servizi.
+                                        </p>
+                                        <strong>Criteo (Criteo SA)</strong>
+                                        <p>Criteo è un servizio di advertising fornito da Criteo SA. Fornisce annunci pubblicitari tramite prodotti di visualizzazione e/o banner mirati che potrebbero interessare gli utenti sulla base dei loro più recenti comportamenti durante la navigazione online. Per maggiori informazioni consultare il sito www.criteo.com</p>
+                                        <strong>Remarketing con Google Analytics per la pubblicità display (Google Inc.)</strong>
+                                        <p>   Google Analytics per la pubblicità display è un servizio di remarketing e behavioral targeting fornito da Google Inc. che collega l'attività di tracciamento effettuata da Google Analytics e dai suoi cookie con il network di advertising Adwords ed il Cookie Doubleclick. https://www.google.it/intl/it_it/policies/technologies/cookies/</p>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="cont1"><h4>INFORMATION PROVIDED BY JUVENTUS F.C. S.P.A. (“JUVENTUS”)</h4></div>
+                    <div id="cont2">
+                        <p>Pursuant to Article 13 of the Italian Data Protection Code</p>
+                        <ul>
+                            <li>The Data Controller is Juventus F.C. S.p.A. with registered office in C.so Galileo Ferraris 32 - Turin (hereinafter, "Controller");</li>
+                            <li>Data is collected only for the purposes and the duration stated in the table below and are processed electronically;</li>
+                            <li>With respect to proprietary “technical” cookies, their use does not require the user's prior consent because these are cookies that are necessary for the browsing of Juventus websites and their correct operation. If technical cookies are removed through browser settings, it might be impossible to browse the websites in full or in part;</li>
+                            <li>Data collected by first-party cookies may be forwarded to entities that act on behalf of Juventus as data processors or agents, for purposes connected to those described above. With regard to the aforementioned data, the user may exercise all rights under Article 7 of the Italian Data Protection Code, as detailed in the Policy on the processing of personal data accessible through the “Privacy” link on the Website;</li>
+                            <li>Finally, with respect to third-party cookies, their purpose, the logics underpinning their processing, as well as the management of users' preferences in regard to them are not set and/or verified by Juventus, but rather by the entity that provides them as supplier and Data Controller.</li>
+                        </ul>
+                        <table>
+                            <tr>
+                                <th>Name of Cookie</th>
+                                <th>Types</th>
+                                <th>Domain</th>
+                                <th>Duration</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>Juve</td>
+                                <td>Technical</td>
+                                <td>Juventus.com</td>
+                                <td>Temporary session cookie</td>
+                                <td>Used to track the current session</td>
+                            </tr>
+                            <tr>
+                                <td>VOTED_123</td>
+                                <td>Technical</td>
+                                <td>Juventus.com</td>
+                                <td>30 days</td>
+                                <td>Used for voting within the area reseved to registered users</td>
+                            </tr>
+                            <tr>
+                                <td>Google Analytics</td>
+                                <td>Analytical</td>
+                                <td>Google.com</td>
+                                <td> Persistent cookie</td>
+                                <td>Analytical/ misurazioneMeasuring Targeting/td>
+                            </tr>
+                            <tr>
+                                <td>Piwik</td>
+                                <td>Analytical</td>
+                                <td>Piwik.org</td>
+                                <td>Persistent cookie</td>
+                                <td>Piwik tracking</td>
+                            </tr>
+                            <tr>
+                                <td>Criteo</td>
+                                <td>Profiling/ adv</td>
+                                <td>Criteo.com</td>
+                                <td>Persistent cookie</td>
+                                <td>Advertising Targeting</td>
+                            </tr>
+                            <tr>
+                                <td>Doubleclick</td>
+                                <td>Profiling/ adv</td>
+                                <td>Google.com</td>
+                                <td>Persistent cookie</td>
+                                <td>Advertising Remarketing and behavioral targeting</td>
+                            </tr>
+                            <tr>
+                                <td>Google Adwords remarketing</td>
+                                <td>Profiling/ adv</td>
+                                <td>Google.com</td>
+                                <td>Persistent cookie</td>
+                                <td>Advertising Remarketing and behavioral targeting</td>
+                            </tr>
+                            <tr>
+                                <td>Facebook remarketingFacebook Custom Audience</td>
+                                <td>Profiling/ adv</td>
+                                <td>Facebook.com</td>
+                                <td>Persistent cookie</td>
+                                <td>Advertising Remarketing and behavioral targeting</td>
+                            </tr>
+                            <tr>
+                                <td>Twitter Remarketing Twitter Tailored Audiences</td>
+                                <td>Profiling/ adv</td>
+                                <td>Twitter.com</td>
+                                <td>Persistent cookie</td>
+                                <td>Advertising Remarketing and behavioral targeting</td>
+                            </tr>
+                            <tr>
+                                <td>Facebook social widget</td>
+                                <td></td>
+                                <td>Facebook.com</td>
+                                <td></td>
+                                <td>Interazione con i social network</td>
+                            </tr>
+                            <tr>
+                                <td>Twitter social widget</td>
+                                <td></td>
+                                <td>twitter.com</td>
+                                <td></td>
+                                <td>Interaction with social networks</td>
+                            </tr>
+                            <tr>
+                                <td>Google+ social widget</td>
+                                <td></td>
+                                <td>Google.com</td>
+                                <td></td>
+                                <td>Interazione con i social network</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        <!--尾部信息栏-->
+<div id="footer">
+        <!--小图标栏-->
+        <div id="d1">
+                <ul>
+                    <li><a href="https://weibo.com/juventusfccn"><img src="../imgs/weibo.svg" alt=""/></a></li>
+                    <li><a href=""><img src="../imgs/QQ.svg" alt=""/></a></li>
+                    <li><a id="weixin" href="javascript:"><img src="../imgs/wechat.svg" alt=""/></a></li>
+                </ul>
+        </div>
+        <!-- 文字信息栏-->
+        <div id="d2">
+            <ul id="u1">
+                <li><a href="index.html">主页</a></li>
+                <li><a href="news.html">新闻</a></li>
+                <li><a href="players.html">球员</a></li>
+                <li><a href="videos.html">视频</a></li>
+                <li><a href="honner.html">荣誉</a></li>
+                <li><a href="">商城</a></li>
+            </ul>
+            <ul id="u2">
+                <li><a href="players.html">教练</a></li>
+                <li><a href="players.html">主席</a></li>
+                <li><a href="honner.html">历史</a></li>
+                <li><a href="honner.html">传奇</a></li>
+                <li><a href="football.html">球场</a></li>
+                <li><a href="football.html">城市</a></li>
+            </ul>
+            <ul id="u3">
+                <li><a href="papers.html">条款和条件</a></li>
+                <li><a href="papers.html">隐私和政策</a></li>
+                <li><a href="papers.html">联系我们</a></li>
+                <li><a href="cookies.html">Cooike政策</a></li>
+            </ul>
+        </div>
+        <!-- 广告图标栏-->
+        <div id="d3">
+            <ul>
+                <li><img src="../fimg/adidas_grey.svg"alt=""/></li>
+                <li><img src="../fimg/jeep_grey.svg"alt=""/></li>
+                <li><img src="../fimg/allianz_grey.svg"alt=""/></li>
+                <li><img src="../fimg/balocco_grey.svg"alt=""/></li>
+                <li><img src="../fimg/cygames_grey.svg"alt=""/></li>
+                <li><img src="../fimg/frecciarossa_grey.svg"alt=""/></li>
+                <li><img src="../fimg/dececco_grey.svg"alt=""/></li>
+                <li><img src="../fimg/linglong_grey.svg"alt=""/>
+                <li><img src="../fimg/mms_grey.svg"alt=""/></li>
+                <li><img src="../fimg/noberasco_grey.svg" alt=""/></li>
+                <li><img src="../fimg/osonyq_grey.svg" alt=""/></li>
+                <li><img src="../fimg/philips_grey.svg" alt=""/></li>
+                <li><img src="../fimg/randstad_grey.svg" alt=""/></li>
+                <li><img src="../fimg/samsung_grey.svg" alt=""/></li>
+                <li><img src="../fimg/sky_grey.svg" alt=""/></li>
+                <li><img src="../fimg/ubi_grey.svg" alt=""/></li>
+                <li><img src="../fimg/betfair_grey.svg" alt=""/></li>
+                <li><img src="../fimg/ganten_grey.svg" alt=""/></li>
+                <li id="flogo"><img src="../fimg/logo-j2.svg" alt=""/></li>
+            </ul>
+        </div>
+        <!-- 版权声明-->
+        <p>版权所有尤文图斯©2019年版权所有</p>
+    </div>   
+</body>
+</html>

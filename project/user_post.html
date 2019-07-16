@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin:0;padding:0;}
+        /*头部导航栏*/
+        #header{
+            min-width:1400px;
+            height:48px;
+            background-color:#fff;
+        }
+        /*头部尤文logo*/
+        #logo{
+            width:45px;
+            height:45px;
+            left:100px;
+        }
+        /*导航栏样式*/
+        a{
+            text-decoration:none;
+        }
+        #header ul li{
+            float: left;
+            list-style-type: none;
+            margin:0 20px;
+        }
+        /*头部文字交互效果*/
+        #header ul li a:hover{
+            color:#bda4b0;
+        }
+        #header ul li a{
+            text-decoration:none;
+            font-size:17px;
+            color:black;
+            text-align:center;
+            line-height:48px;
+        }
+        /*主体页面*/
+        #content{
+            min-width:1400px;
+            height:700px;
+            background:#000;
+        }
+        #post{
+            width:700px;
+            height:700px;
+            background:white;
+            color:black;
+            margin-left:610px;
+        }
+        #post tr td{
+            font-family:"微软雅黑";
+        }
+        #post th{
+            font-family:"Helvetica";
+            font-size:30px;
+        }
+        #td2{
+            background:#000;
+            color:#fff;
+            width:100px;
+            transition-property:all;
+            transition-duration:0.6s;
+        } 
+        #td2:hover{
+            background:#fff;
+            color:#000;
+        }
+        #td1{
+            text-align:right;
+        }
+        #dl{
+            color:#000;
+            padding:10px 10px;
+            border-radius: 3px;
+            transition-property:all;
+            transition-duration:0.6s;
+        }
+        #dl:hover{
+            background:#000;
+            color:#fff;
+        }
+        #uname,#upwd,#email,#phone{
+            width:225px;
+            height:35px;
+            padding:1px 5px;
+        }/* 注册按钮 */
+        button{
+            width:200px;
+            height:38px;
+            display: inline-block;
+            font-weight: 400;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            user-select: none;
+            border: 1px solid transparent;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: 0.25rem;
+            transition-property:all;
+            transition-duration:0.6s;
+        }
+        button:hover{
+            background:#000;
+            color:#fff;
+        }
+        
+        /*尾部*/
+        #footer:before{
+            content:" ";
+            display:table;
+        }
+        #footer{
+            min-width:1400px;
+            height:741px;
+            background-color: #fff;
+            position: relative;
+        }
+        /*尾部一层小图片栏*/
+        #d1{
+            min-width:1400px;
+            margin:0 auto ;
+            border-top:2px solid #b9b4b4;
+        }
+        #d1 ul{
+            width:300px;
+            margin:30px auto;
+        }
+        #d1 ul li{
+            list-style-type: none;
+            float: left;
+            margin:0 30px ;
+            cursor: pointer;
+            transition: all 0.6s;
+        }
+        /*小图片交互效果*/
+        #d1 ul li:hover{
+            transform: scale(1.1);
+        }
+        /*尾部二层文字信息栏*/
+        #d2{
+            min-width:1400px;
+            margin:90px  auto ;
+            border-top:2px solid #b9b4b4;
+        }
+        #u1{
+            width:65px;
+            float: left;
+            margin-left:650px;
+
+        }
+        #u2{
+            width:35px;
+            float:left;
+            margin-left:193px ;
+        }
+        #u3{
+            width:87px;
+            float:left;
+            margin-left: 179px;
+        }
+        #d2 ul li{
+            list-style-type:none;
+            margin:10px 0;
+        }
+        /*文字交互效果*/
+        #d2 ul li a:hover{
+            color:#000;
+        }
+        #d2 ul li a{
+            color:#b9b4b4;
+        }
+        /*微信二维码*/
+        #weixin{
+            position:relative;
+        }
+        #weixin::after{
+            content: url(../imgs/ewm.jpg);
+            position: absolute;
+            right: -51px;
+            top: 10px;
+            z-index: 99;
+            width:50px;
+            height: 50px;
+            border: 3px solid #000;
+            border-radius: 4px;
+            transform-origin: top right;
+            transform: scale(0);
+            opacity: 0;
+            -webkit-transition: all .4s ease-in-out;
+            -o-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+        }
+        #weixin:hover::after{
+            transform:scale(1);
+            opacity: 1;
+        }
+        /*尾部三层广告图标栏*/
+        #d3{
+            min-width:1400px;
+            height:420px;
+            margin-top:200px;
+            background:#000;
+        }
+        #d3 ul{
+            width:800px;
+            margin:0 auto;
+        }
+        #d3 ul li{
+            list-style-type: none;
+            float: left;
+            margin-right:15px;
+            cursor: pointer;
+            transition: all 0.6s;
+        }
+        /*广告图片交互效果*/
+        #d3 ul li:hover{
+            transform: scale(1.3);
+        }
+        #d3 ul li img{
+            width:110px;
+            height:100px;
+        }
+        /*尾部尤文logo*/
+        #d3 #flogo{
+            margin-left:320px;
+        }
+        /*版权信息*/
+        #footer p{
+            text-align: center;
+        }
+        .t5{
+            text-align:center;
+        }
+        #t3 img{
+            margin:0 4px;
+        }
+        #t3{
+            border-bottom:4px solid black;
+        }
+        #t3 img{
+            overflow: hidden;
+            transition-duration:0.5s;
+            transition-timing-function:linear;
+        }
+        #t3 img:hover{
+            transform:translateY(10px);
+        }
+        /*侧边导航栏*/
+        #s1{
+            width:50px;
+            height:205px;
+            position:fixed;
+            border-radius:5px;
+            top:200px;
+            background:linear-gradient(to bottom,#d6d6d6,#e2e2e2);
+            right:5px;
+            z-index:1;
+        }
+        #s1 ul li{
+            list-style-type: none;
+        }
+        #s1 ul li:hover{
+            background:#000;
+        }
+    </style>
+</head>
+<body>
+<!-- 侧边导航栏 -->
+<span id="s1">
+    <ul>
+        <li><a href="index.html"><img src="../imgs/home_icon.svg" alt=""/></a></li>
+        <li><a href=""><img src="../imgs/phone_icon.svg" alt=""/></a></li>
+        <li><a href=""><img src="../imgs/date_icon.svg" alt=""/></a></li>
+        <li><a href=""><img src="../imgs/map_icon.svg" alt=""/></a></li>
+    </ul>
+</span>
+<!--头部导航栏-->
+<div id="header">
+    <ul>
+        <li><a href="index.html"><img id="logo" src="../imgs/logo-j.svg" title="尤文图斯"></a></li>
+        <li><a href="index.html">主页</a></li>
+        <li><a href="news.html">新闻</a></li>
+        <li><a href="players.html">球员</a></li>
+        <li><a href="videos.html">视频</a></li>
+        <li><a href="honner.html">荣誉殿堂</a></li>
+        <li id="store"><a href="">官方商城</a></li>
+    </ul>
+</div>
+<!-- 主体 -->
+<div id="content">
+    <!-- 注册框 -->
+    <table id="post">
+        <tr>
+            <th id="t1" colspan="2">尤文图斯用户注册</th>
+        </tr>
+        <tr>
+            <td id="t3" class="t5" colspan="2">
+                <img src="../imgs/qq_icon.svg" alt=""/>
+                <img src="../imgs/wx_icon.svg" alt=""/>
+                <img src="../imgs/xl_icon.svg" alt=""/>
+                <img src="../imgs/zfb_icon.svg" alt=""/>
+                <img src="../imgs/facebook_icon.svg" alt=""/>
+                <img src="../imgs/ins_icon.svg" alt=""/>
+            </td>
+        </tr>
+        <tr>
+            <td id="td2">用户信息详细</td>
+            <td id="td1"><a id="dl" href="login.html">已有账号,立即登录</a></td>
+        </tr>
+        <tr>
+            <td class="t5" colspan="2">用户:<input type="text" placeholder="请输入用户名" id="uname" /></td></tr>
+        <tr>
+            <td class="t5" colspan="2">密码:<input type="password" placeholder="请输入密码" id="upwd"/></td></tr>
+        <tr>
+            <td class="t5" colspan="2">邮箱:<input type="text" placeholder="请输入邮箱" id="email"/></td></tr>
+        <tr>
+            <td class="t5" colspan="2">手机:<input type="text" placeholder="请输入手机号码" id="phone"/></td></tr>
+        <tr>
+            <td class="t5" colspan="2">
+                <input type="radio" id="M" name="one"/><label for="M">男</label>
+                <input type="radio" id="F" name="one"/><label for="F">女</label>
+            </td>
+        </tr>
+        <tr>
+            <td class="t5" colspan="2">国家与地区:
+                <select name="country">
+                    <option value="">中国</option><option value="">美国</option>
+                    <option value="">法国</option><option value="">俄罗斯</option>
+                    <option value="">英国</option><option value="">日本</option>
+                    <option value="">韩国</option><option value="">泰国</option>
+                    <option value="">印度</option><option value="">菲律宾</option>
+                    <option value="">朝鲜</option><option value="">老挝</option>
+                    <option value="">尼泊尔</option><option value="">越南</option>
+                    <option value="">新加坡</option><option value="">柬埔寨</option>
+                    <option value="">哈萨克斯坦</option><option value="">不丹</option>
+                    <option value="">蒙古</option><option value="">缅甸</option>
+                    <option value="">东帝汶</option><option value="">马来西亚</option>
+                    <option value="">印度尼西亚</option><option value="">文莱</option>
+                    <option value="">吉尔吉斯斯坦</option><option value="">阿富汗</option>
+                    <option value="">塔吉克斯坦</option><option value="">伊拉克</option>
+                    <option value="">乌兹别克斯坦</option><option value="">伊朗</option>
+                    <option value="">土库曼斯坦</option><option value="">叙利亚</option>
+                    <option value="">约旦</option><option value="">黎巴嫩</option>
+                    <option value="">以色列</option><option value="">巴勒斯坦</option>
+                    <option value="">沙特阿拉伯</option><option value="">巴林</option>
+                    <option value="">卡塔尔</option><option value="">科威特</option>
+                    <option value="">阿联酋</option><option value="">阿曼</option>
+                    <option value="">也门</option><option value="">格鲁吉亚</option>
+                    <option value="">亚美尼亚</option><option value="">阿塞拜疆</option>
+                    <option value="">土耳其</option><option value="">塞浦路斯</option>
+                    <option value="">芬兰</option><option value="">瑞典</option>
+                    <option value="">爱沙尼亚</option><option value="">挪威</option>
+                    <option value="">拉脱维亚</option><option value="">冰岛</option>
+                    <option value="">立陶宛</option><option value="">丹麦</option>
+                    <option value="">摩尔多瓦</option><option value="">乌克兰</option>
+                    <option value="">白俄罗斯</option><option value="">波兰</option>
+                    <option value="">奥地利</option><option value="">捷克</option>
+                    <option value="">瑞士</option><option value="">斯洛伐克</option>
+                    <option value="">列支敦士登</option><option value="">匈牙利</option>
+                    <option value="">爱尔兰</option><option value="">比利时</option>
+                    <option value="">荷兰</option><option value="">卢森堡</option>
+                    <option value="">摩纳哥</option><option value="">斯洛文尼亚</option>
+                    <option value="">罗马尼亚</option><option value="">克罗地亚</option>
+                    <option value="">保加利亚</option><option value="">黑山</option>
+                    <option value="">塞尔维亚</option><option value="">波斯尼亚</option>
+                    <option value="">马其顿</option><option value="">阿尔巴尼亚</option>
+                    <option value="">希腊</option><option value="">意大利</option>
+                    <option value="">葡萄牙</option><option value="">马其他</option>
+                    <option value="">安道尔</option><option value="">梵蒂冈</option>
+                    <option value="">西班牙</option><option value="">圣马力诺</option>
+                    <option value="">埃及</option><option value="">利比亚</option>
+                    <option value="">阿尔及利亚</option><option value="">突尼斯</option>
+                    <option value="">厄立特里亚</option><option value="">摩洛哥</option>
+                    <option value="">索马里</option><option value="">坦桑尼亚</option>
+                    <option value="">吉布提</option><option value="">乌干达</option>
+                    <option value="">肯尼亚</option><option value="">卢旺达</option>
+                    <option value="">布隆迪</option><option value="">塞舌尔</option>
+                    <option value="">乍得</option><option value="">中非</option>
+                    <option value="">喀麦隆</option><option value="">刚果共和国</option>
+                    <option value="">赤道几内亚</option><option value="">刚果民主共和国</option>
+                    <option value="">加蓬</option><option value=""></option>
+                    <option value="">圣多美和普林西比</option><option value="">毛里塔尼亚</option>
+                    <option value="">塞内加尔</option><option value="">冈比亚</option>
+                    <option value="">佛得角</option><option value="">马里</option>
+                    <option value="">塞拉利昂</option><option value="">布基纳法索</option>
+                    <option value="">利比里亚</option><option value="">几内亚</option>
+                    <option value="">加纳</option><option value="">几内亚比绍</option>
+                    <option value="">多哥</option><option value="">博茨瓦纳</option>
+                    <option value="">贝宁</option><option value="">纳米比亚</option>
+                    <option value="">尼日尔</option><option value="">南非</option>
+                    <option value="">尼日利亚</option><option value="">斯威士兰</option>
+                    <option value="">西撒拉哈</option><option value="">莱索托</option>
+                    <option value="">赞比亚</option><option value="">马达加斯加</option>
+                    <option value="">安哥拉</option><option value="">科摩罗</option>
+                    <option value="">津巴布韦</option><option value="">毛里求斯</option>
+                    <option value="">马拉维</option><option value="">莫桑比克</option>
+                    <option value="">加拿大</option><option value="">尼加拉瓜</option>
+                    <option value="">墨西哥</option><option value="">哥斯达黎加</option>
+                    <option value="">危地马拉</option><option value="">巴拿马</option>
+                    <option value="">伯利兹</option><option value="">巴哈马</option>
+                    <option value="">萨尔瓦多</option><option value="">古巴</option>
+                    <option value="">洪都拉斯</option><option value="">牙买加</option>
+                    <option value="">海地</option><option value="">安提瓜和巴布达</option>
+                    <option value="">多米尼加</option><option value="">圣基茨和尼维斯</option>
+                    <option value="">圣卢西亚</option><option value="">多米尼克</option>
+                    <option value="">圣文森特和格林纳丁斯</option><option value="">格林纳达</option>
+                    <option value="">巴巴多斯</option><option value="">特立尼达和多巴哥</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="t5" colspan="2">
+                <input type="checkbox" id="ck"/><label for="ck">我已经阅读并同意</label><a href="">《尤文图斯俱乐部用户注册协议》</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="t5" colspan="2"><button>注册</button></td>
+        </tr>
+    </table>
+</div>
+<!--尾部信息栏-->
+<div id="footer">
+    <!--小图标栏-->
+    <div id="d1">
+        <ul>
+            <li><a href="https://weibo.com/juventusfccn"><img src="../imgs/weibo.svg" alt=""/></a></li>
+            <li><a href=""><img src="../imgs/QQ.svg" alt=""/></a></li>
+            <li><a id="weixin" href="javascript:"><img src="../imgs/wechat.svg" alt=""/></a></li>
+        </ul>
+    </div>
+    <!-- 文字信息栏-->
+    <div id="d2">
+        <ul id="u1">
+            <li><a href="index.html">主页</a></li>
+            <li><a href="news.html">新闻</a></li>
+            <li><a href="players.html">球员</a></li>
+            <li><a href="videos.html">视频</a></li>
+            <li><a href="honner.html">荣誉</a></li>
+            <li><a href="">商城</a></li>
+        </ul>
+        <ul id="u2">
+            <li><a href="players.html">教练</a></li>
+            <li><a href="players.html">主席</a></li>
+            <li><a href="honner.html">历史</a></li>
+            <li><a href="honner.html">传奇</a></li>
+            <li><a href="football.html">球场</a></li>
+            <li><a href="football.html">城市</a></li>
+        </ul>
+        <ul id="u3">
+            <li><a href="papers.html">条款和条件</a></li>
+            <li><a href="papers.html">隐私和政策</a></li>
+            <li><a href="papers.html">联系我们</a></li>
+            <li><a href="cookies.html">Cooike政策</a></li>
+        </ul>
+    </div>
+    <!-- 广告图标栏-->
+    <div id="d3">
+        <ul>
+            <li><img src="../fimg/adidas_grey.svg"alt=""/></li>
+            <li><img src="../fimg/jeep_grey.svg"alt=""/></li>
+            <li><img src="../fimg/allianz_grey.svg"alt=""/></li>
+            <li><img src="../fimg/balocco_grey.svg"alt=""/></li>
+            <li><img src="../fimg/cygames_grey.svg"alt=""/></li>
+            <li><img src="../fimg/frecciarossa_grey.svg"alt=""/></li>
+            <li><img src="../fimg/dececco_grey.svg"alt=""/></li>
+            <li><img src="../fimg/linglong_grey.svg"alt=""/></li>
+            <li><img src="../fimg/mms_grey.svg"alt=""/></li>
+            <li><img src="../fimg/noberasco_grey.svg" alt=""/></li>
+            <li><img src="../fimg/osonyq_grey.svg" alt=""/></li>
+            <li><img src="../fimg/philips_grey.svg" alt=""/></li>
+            <li><img src="../fimg/randstad_grey.svg" alt=""/></li>
+            <li><img src="../fimg/samsung_grey.svg" alt=""/></li>
+            <li><img src="../fimg/sky_grey.svg" alt=""/></li>
+            <li><img src="../fimg/ubi_grey.svg" alt=""/></li>
+            <li><img src="../fimg/betfair_grey.svg" alt=""/></li>
+            <li><img src="../fimg/ganten_grey.svg" alt=""/></li>
+            <li id="flogo"><img src="../fimg/logo-j2.svg" alt=""/></li>
+        </ul>
+    </div>
+    <!-- 版权声明-->
+    <p>版权所有尤文图斯©2019年版权所有</p>
+</div>
+</body>
+</html>
